@@ -55,6 +55,55 @@ Parrot Quizz
 
 ## Wireframe
 
+<details>
+   <summary>Desktop</summary>
+   
+-  <details>
+         <summary>Homepage</summary>
+            <img src="wireframe/desktop-homepage.png" alt="Wireframing for desktop home page" width="800px" />
+      </details>
+
+- <details>
+     <summary>Nickname submitted</summary>
+        <img src="wireframe/desktop-nickname-submitted.png" alt="Wireframing for desktop nickname submitted page" width="800px" />
+  </details>
+
+- <details>
+     <summary>Question</summary>
+        <img src="wireframe/desktop-question.png" alt="Wireframing for desktop question page" width="800px" />
+  </details>
+
+- <details>
+     <summary>Scoreboard</summary>
+        <img src="wireframe/desktop-scoreboard.png" alt="Wireframing for desktop scoreboard page" width="800px" />
+  </details>  
+
+</details>
+
+<details>
+   <summary>Mobile</summary>
+      
+-  <details>
+         <summary>Homepage</summary>
+            <img src="wireframe/mobile-homepage.png" alt="Wireframing for mobile home page" width="800px" />
+      </details>
+
+- <details>
+     <summary>Nickname submitted</summary>
+        <img src="wireframe/mobile-nickname-submitted.png" alt="Wireframing for mobile nickname submitted page" width="800px" />
+  </details>
+
+- <details>
+     <summary>Question</summary>
+        <img src="wireframe/mobile-question.png" alt="Wireframing for mobile question page" width="800px" />
+  </details>
+
+- <details>
+     <summary>Scoreboard</summary>
+        <img src="wireframe/mobile-scoreboard.png" alt="Wireframing for mobile scoreboard page" width="800px" />
+  </details>
+</details>
+  
 
 ---
 
