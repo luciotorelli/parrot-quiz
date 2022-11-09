@@ -1,0 +1,91 @@
+/* Give full control over margin, padding and border on all elements*/
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+}
+
+header h1 {
+    text-align: center;
+}
+
+.intro-section {
+    color: #efeed4;
+    background-color: #deb51d;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.speech-bubble-div {
+    align-self: flex-end;
+}
+
+.speech-bubble-image {
+    width: 80vw;
+    height: 25vh;
+}
+
+.speech-bubble-div p {
+    position: absolute;
+    top: 11%;
+    left: 28%;
+    width: 60vw;
+    text-align: center;
+    color: black;
+}
+
+.hi-maple {
+    border-radius: 50%;
+    width: 5em;
+    margin-left: 5vw;
+    align-self: flex-start;
+}
+
+#nickname {
+    margin: 8vh 2vw 2vw 2vw;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#submit-nickname {
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.navbar {
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.how-to-play-button {
+    background-color: #efeed4;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.scoreboard-button {
+    background-color: #efeed4;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+}

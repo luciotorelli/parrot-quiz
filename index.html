@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parrot Quiz</title>
-</head>
-<body>
-    
-</body>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Parrot Quiz</h1>
+    </header>
+    <section class="intro-section">
+      <div class="speech-bubble-div">
+        <img src="assets/images/speech-bubble.webp" class="speech-bubble-image" alt="Speech Bubble">
+        <p>Hi, I am Maple! Your parr-host of the day. Please submit your nickname below so I can best squawk at you.</p>
+      </div>
+      <img src="assets/images/hi-maple.webp" class="hi-maple" alt="Parrot Waving Hi">
+      <input id="nickname" type="text" placeholder="Nickname" />
+      <input id="submit-nickname" type="submit" />
+      <div class="navbar">
+        <a class="how-to-play-button" href="/how-to-play">How to Play</a>
+        <a class="scoreboard-button" href="/scoreboard">Scoreboard</a>
+      </div>
+    </section>
+  </body>
 </html>
