@@ -15,9 +15,9 @@ Parrot Quiz is an interactive multiple question game to test your knowledge abou
 
 1.  [Overview](https://github.com/luciotorelli/parrot-quiz#logo)
 2.  [User Stories](https://github.com/luciotorelli/parrot-quiz#user-stories)
-3.  [Site Owner Goals](https://github.com/luciotorelli/nature-one#site-owner-goals)
-4.  [Wireframe](https://github.com/luciotorelli/nature-one#wireframe)
-5.  [Color Scheme and Typography](https://github.com/luciotorelli/color-scheme-and-typography)
+3.  [Site Owner Goals](https://github.com/luciotorelli/parrot-quiz#site-owner-goals)
+4.  [Wireframe](https://github.com/luciotorelli/parrot-quiz#wireframe)
+5.  [Color Scheme and Typography](https://github.com/luciotorelli/parrot-quiz#color-scheme-and-typography)
 6.  Features
     - Features
     - Future Features
