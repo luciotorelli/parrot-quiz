@@ -5,17 +5,19 @@
 <h2><a href="https://luciotorelli.github.io/parrot-quiz/index.html" target="_blank">Live Website here</a></h2>
 
 
-Parrot Quizz
+Parrot Quiz
 ---
+
+Parrot Quiz is an interactive multiple question game to test your knowledge about our feathered friends, it is hosted by a parrot named Maple.
 
 ## Table of Contents
 
 
-1.  Overview
-2.  User Stories
-3.  Site Owner Goals
-4.  Wireframe
-5.  Color Scheme and Typography
+1.  [Overview](https://github.com/luciotorelli/parrot-quiz#logo)
+2.  [User Stories](https://github.com/luciotorelli/parrot-quiz#user-stories)
+3.  [Site Owner Goals](https://github.com/luciotorelli/nature-one#site-owner-goals)
+4.  [Wireframe](https://github.com/luciotorelli/nature-one#wireframe)
+5.  [Color Scheme and Typography](https://github.com/luciotorelli/color-scheme-and-typography)
 6.  Features
     - Features
     - Future Features
@@ -40,15 +42,19 @@ Parrot Quizz
 
 ## User Stories
 
-- 
-
-
+- As a new user I would like to understand the theme of the quiz/game in the very first access.
+- As a returning user I would like to easily access the scoreboard.
+- As a user in the middle of a game I would like to check my score and wrong answers.
+- As a user answering a question I would like to receive feedback in the form of text or color of my guess.
 
 ---
 
 ## Site Owner Goals:
 
-- 
+- Create a website for testing the user's knowledge on parrots.
+- The website is interactive, fun and easy to navigate.
+- The website is responsive and adaptable for Mobile, Desktop and in-between screens.
+- The website/game purpose is easily identifiable on the very first visit.
 
 
 ---
@@ -114,9 +120,12 @@ Parrot Quizz
 1. ### Color Scheme
 
 
+<img src="color-scheme/color-scheme.png" alt="Wireframing for mobile scoreboard page" width="800px" />
 
-2. ### Typography
 
+1. ### Typography
+
+[Google Fonts - Nunito](https://fonts.google.com/specimen/Nunito)
 
 ---
 
