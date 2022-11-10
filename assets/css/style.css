@@ -63,14 +63,28 @@ header h1 {
 }
 
 #nickname {
-    margin: 8vh 2vw 2vw 2vw;
+    margin: 15vh 2vw 2vw 2vw;
     padding: 8px;
     border-radius: 10px;
+    text-align: center;
 }
 
-#submit-nickname {
+#submit-nickname-button {
+    border: 5px outset #deb51d;
     padding: 8px;
     border-radius: 10px;
+    background-color: #deb51d;
+    transition: 0.5s;
+}
+
+#submit-nickname-button:hover {
+    border: 5px outset #deb51d;
+    background-color: #deb51d;
+    color: #000;
+}
+
+#submit-nickname-button:active {
+    border: 5px inset #deb51d;
 }
 
 .navbar {
@@ -82,18 +96,41 @@ header h1 {
 }
 
 .how-to-play-button {
-    background-color: #efeed4;
+    border: 5px outset #deb51d;
+    background-color: #deb51d;
     color: black;
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
+    transition: 0.5s;
+}
 
+.how-to-play-button:hover {
+    border: 5px outset #deb51d;
+    background-color: #deb51d;
+    color: #000;
+}
+
+.how-to-play-button:active {
+    border: 5px inset #deb51d;
 }
 
 .scoreboard-button {
-    background-color: #efeed4;
+    border: 5px outset #deb51d;
+    background-color: #deb51d;
     color: black;
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
+    transition: 0.5s;
+}
+
+.scoreboard-button:hover {
+    border: 5px outset #deb51d;
+    background-color: #deb51d;
+    color: #000;
+}
+
+.scoreboard-button:active {
+    border: 5px inset #deb51d;
 }
