@@ -1,3 +1,6 @@
+/* Import Google Font Nunito*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 /* Give full control over margin, padding and border on all elements*/
 * {
     margin: 0;
@@ -11,16 +14,19 @@ html, body
 }
 
 body {
-    background-color: #fff;
+    background-image: url("../images/feather-background.jpg");
+    font-family: nunito, sans-serif;
 }
 
 header h1 {
     text-align: center;
+    color: #efeed4;
+    text-shadow: 1px 1px #000;
 }
 
 .intro-section {
     color: #efeed4;
-    background-color: #deb51d;
+    background-color: rgb(28, 12, 3, 0.7);
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -31,26 +37,28 @@ header h1 {
 
 .speech-bubble-div {
     align-self: flex-end;
-}
-
-.speech-bubble-image {
+    margin-top: 5vh;
+    margin-right: 2vw;
     width: 80vw;
-    height: 25vh;
+    height: 18vh;
+    border-radius: 30px;
+    background-color: #efeed4;
+    /*Align Text vertically and horizontally*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .speech-bubble-div p {
-    position: absolute;
-    top: 11%;
-    left: 28%;
-    width: 60vw;
+    margin: 10px;
     text-align: center;
     color: black;
 }
 
 .hi-maple {
     border-radius: 50%;
-    width: 5em;
-    margin-left: 5vw;
+    width: 4em;
+    margin-left: 3vw;
     align-self: flex-start;
 }
 
