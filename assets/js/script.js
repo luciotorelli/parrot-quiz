@@ -36,24 +36,56 @@ function preGameMessage() {
     promise to never clip wings!" to start the quiz whenever you are ready.`;
 }
 
-// Get the how to play modal, the how to play button and the button to close the modal. 
-let modal = document.getElementById("howToPlayModal");
-let btn = document.getElementsByClassName("how-to-play-button")[0];
-let span = document.getElementsByClassName("close-modal-button")[0];
+/**
+ * Get the how to play and scoreboard; modal, buttons and the close button. 
+ */ 
+let howToPlayModal = document.getElementById("howToPlayModal");
+let howToPlayButton = document.getElementsByClassName("how-to-play-button")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function () {
-    modal.style.display = "block";
+let scoreboardModal = document.getElementById("scoreboardModal");
+let scoreboardButton = document.getElementsByClassName("scoreboard-button")[0];
+
+let closeHowToPlayModal = document.getElementsByClassName("close-modal-button")[0];
+let closeScoreboardModal = document.getElementsByClassName("close-modal-button")[1];
+
+/**
+ * When the user clicks on how to play or scoreboard button, open the equivalent modal
+ */ 
+const modalCheck = e => {
+    if (e.target.id === "how-to-play-button") {
+        howToPlayModal.style.display = "block";
+    } else if (e.target.id === "scoreboard-button") {
+        scoreboardModal.style.display = "block";
+    }
 }
 
-// When the user clicks on close button (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
+/**
+ * Add eventlistener click to how to play and scoreboard buttons
+ */ 
+howToPlayButton.addEventListener("click", modalCheck);
+scoreboardButton.addEventListener("click", modalCheck);
+
+/**
+ * When the user clicks on how to play close button (x), close the modal
+ */ 
+closeHowToPlayModal.onclick = function () {
+    howToPlayModal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+/**
+ * When the user clicks on scoreboard close button (x), close the modal
+ */ 
+closeScoreboardModal.onclick = function () {
+    scoreboardModal.style.display = "none";
+}
+
+/**
+ * When the user clicks anywhere outside of the how to play modal or scoreboard modal, close it
+ */
 window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == howToPlayModal) {
+        howToPlayModal.style.display = "none";
+    } else if (event.target == scoreboardModal) {
+        scoreboardModal.style.display = "none";
     }
 }
