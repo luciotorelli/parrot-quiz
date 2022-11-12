@@ -8,15 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 /**
- * Focus on Nickname input on load
+ * Focus on Nickname input if the element is present on the DOM
  */
-window.onload = function () {
+
+if (document.getElementById("nickname")) {
     document.getElementById("nickname").focus();
 }
+
 /**
- * Load the preGameMessage to display message 2 after user input their nickname
+ * Load the preGameMessage to display message 2 after user input their nickname if the element is present on the DOM
  */
-document.getElementsByClassName("message-2")[0].onload = preGameMessage();
+if (document.getElementsByClassName("message-2")[0]) {
+    document.getElementsByClassName("message-2")[0].onload = preGameMessage();
+}
 
 function nicknameSubmitted() {
     if (document.getElementById("nickname").value === "") {
@@ -32,21 +36,17 @@ function preGameMessage() {
     promise to never clip wings!" to start the quiz whenever you are ready.`;
 }
 
-// Get the modal
-var modal = document.getElementById("howToPlayModal");
-
-// Get the button that opens the modal
-var btn = document.getElementsByClassName("how-to-play-button")[0];
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close-modal-button")[0];
+// Get the how to play modal, the how to play button and the button to close the modal. 
+let modal = document.getElementById("howToPlayModal");
+let btn = document.getElementsByClassName("how-to-play-button")[0];
+let span = document.getElementsByClassName("close-modal-button")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
     modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on close button (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
 }
