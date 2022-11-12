@@ -1,17 +1,21 @@
-
 // Wait for the DOM to finish loading then add click event listener to the nickname submitted buttons.
 // Get the button elements and add event listeners to them
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let nicknameButton = document.getElementById("submit-nickname-button");
-    
+
     nicknameButton.addEventListener("click", nicknameSubmitted);
 })
 
-window.onload = function() {
+/**
+ * Focus on Nickname input on load
+ */
+window.onload = function () {
     document.getElementById("nickname").focus();
 }
-
+/**
+ * Load the preGameMessage to display message 2 after user input their nickname
+ */
 document.getElementsByClassName("message-2")[0].onload = preGameMessage();
 
 function nicknameSubmitted() {
@@ -28,4 +32,28 @@ function preGameMessage() {
     promise to never clip wings!" to start the quiz whenever you are ready.`;
 }
 
-    
+// Get the modal
+var modal = document.getElementById("howToPlayModal");
+
+// Get the button that opens the modal
+var btn = document.getElementsByClassName("how-to-play-button")[0];
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close-modal-button")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
