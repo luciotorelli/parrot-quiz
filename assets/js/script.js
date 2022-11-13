@@ -89,3 +89,14 @@ window.onclick = function (event) {
         scoreboardModal.style.display = "none";
     }
 }
+
+/**
+ * When the user presses the ESC key, close the how to play modal or scoreboard modal and focus on Nickname input.
+ */
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        howToPlayModal.style.display = "none";
+        scoreboardModal.style.display = "none"
+        document.getElementById("nickname").focus();
+    }
+});
