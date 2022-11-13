@@ -16,6 +16,8 @@ html, body
 body {
     background-image: url("../images/feather-background.jpg");
     font-family: nunito, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 header h1 {
@@ -318,5 +320,121 @@ header h1 {
 }
 
 #start-game-button:active {
+    border: 5px inset #deb51d;
+}
+
+/* Question Section */
+
+.question-header h1 {
+    font-size: 1.5em;
+}
+
+.current-score {
+    display: flex;
+    width: 100%;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.current-score p {
+    margin: 2% 30px 0 30px;
+    color: #efeed4;
+}
+
+.question-section {
+    color: #efeed4;
+    background-color: rgb(28, 12, 3, 0.7);
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.question-image-div {
+    display: flex;
+    justify-content: center;
+}
+
+.question-image {
+    width: 50vw;
+    margin-top: 10px;
+    border-radius: 30px;
+    display: none;
+}
+
+.speech-bubble-3-div {
+    align-self: center;
+    margin-top: 2vh;
+    margin-right: 2vw;
+    width: 80vw;
+    height: 15vh;
+    border-radius: 30px;
+    background-color: #efeed4;
+    /*Align Text vertically and horizontally*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.speech-bubble-3-div p {
+    margin: 10px;
+    text-align: center;
+    color: black;
+}
+
+.maple-photo-3 {
+    border-radius: 50%;
+    width: 3em;
+    margin-right: 3vw;
+    margin-top: 5px;
+    align-self: flex-end;
+    background-color: #efeed4;
+}
+
+.answer-options {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+    margin-top: auto;
+    padding-bottom: 10px;
+}
+
+.answer-options button {
+    border: 5px outset #deb51d;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #deb51d;
+    transition: 0.5s;
+}
+
+
+.answer-options button:hover {
+    border: 5px outset #deb51d;
+    background-color: #deb51d;
+    color: #000;
+}
+
+.answer-options button:active {
+    border: 5px inset #deb51d;
+}
+
+.next-question-button {
+    border: 5px outset #deb51d;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #deb51d;
+    transition: 0.5s;
+    position: absolute;
+    bottom: 15%;
+    width: 150px;
+    display: none;
+}
+
+.next-question-button:active {
     border: 5px inset #deb51d;
 }
