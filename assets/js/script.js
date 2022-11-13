@@ -3,8 +3,14 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     let nicknameButton = document.getElementById("submit-nickname-button");
-
-    nicknameButton.addEventListener("click", nicknameSubmitted);
+    let startGameButton = document.getElementById("start-game-button");
+    
+    if (nicknameButton) {
+        nicknameButton.addEventListener("click", nicknameSubmitted);
+    }
+    if (startGameButton) {
+        startGameButton.addEventListener("click", gameStarted);
+    }
 })
 
 /**
@@ -68,6 +74,7 @@ scoreboardButton.addEventListener("click", modalCheck);
 /**
  * When the user clicks on how to play close button (x), close the modal
  */ 
+
 closeHowToPlayModal.onclick = function () {
     howToPlayModal.style.display = "none";
 }
@@ -100,3 +107,8 @@ document.addEventListener('keydown', (event) => {
         document.getElementById("nickname").focus();
     }
 });
+
+function gameStarted() {
+    localStorage.setItem('gameStarted', "true");
+    window.location = "/question.html";
+}
