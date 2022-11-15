@@ -6,7 +6,26 @@ let currentQuestionIndex;
 let questionContainerElement = document.getElementsByClassName("speech-bubble-3-div")[0];
 let questionElement = document.getElementsByClassName("question")[0];
 let answerOptions = document.getElementsByClassName("answer-options")[0];
+let answerButtons = document.getElementsByClassName("answer");
 let nextButton = document.getElementsByClassName("next-question-button")[0];
+
+/**
+ * Add event listener to reset buttons and body styling, remove dataset from correct answer, add to current question index and call setNextQuestion function
+ */
+nextButton.addEventListener('click', () => {
+    document.body.classList.remove("correctAnswerBody");
+    document.body.classList.remove("wrongAnswerBody");
+    let answers = document.getElementsByClassName("answer");
+    for (var i = 0; i < answers.length; i++) {
+        answers[i].classList.remove('correctAnswerButton');
+        answers[i].classList.remove('wrongAnswerButton');
+        if (answers[i].dataset) {
+            delete answers[i].dataset.correct;
+        }
+    }
+    currentQuestionIndex++;
+    setNextQuestion();
+})
 
 /**
  * On windows load, create a local storage item and set it to true to check if the game is running and start game.
@@ -30,6 +49,7 @@ function startGame() {
  * Function to show question based on the current question index
  */
 function setNextQuestion() {
+    resetState();
     showQuestion(questions[currentQuestionIndex]);
 }
 
@@ -43,7 +63,6 @@ function showQuestion(question) {
     let answerButtonIndex = 0;
     // Loop through all answers, for each answer update the button text, add an eventlistener that calls selectAnswer function, set the dataset based if the answer is correct.
     question.answers.forEach(answer => {
-        let answerButtons = document.getElementsByClassName("answer");
         answerButtons[answerButtonIndex].innerText = answer.text;
         answerButtons[answerButtonIndex].addEventListener('click', selectAnswer);
         if (answer.correct) {
@@ -58,33 +77,51 @@ function resetState() {
     nextButton.style.display = "none";
 }
 
-// Select the correct answer based on the dataset.correct value and call the setStatusClass function
+/**
+* Select the correct answer based on the dataset.correct value and call the setStatusClass function
+*/ 
 function selectAnswer(e) {
     let selectedAnswer = e.target;
     let correct = selectedAnswer.dataset.correct;
+
+    // Call setAnswerStyle function on all answer options
     Array.from(answerOptions.children).forEach(button => {
-      setStatusClass(button, button.dataset.correct)
+        setAnswerStyle(button, button.dataset.correct);
     })
+    
+    // Remove body background image and replace with the color based on the selected answer by adding corresponding class.
+    if (correct) {
+        document.body.classList.add("correctAnswerBody");
+    } else {
+        document.body.classList.add("wrongAnswerBody");
+    }
+
+    // Increase opacity of the selected answer to 1
+    selectedAnswer.classList.add("selectedAnswer");
+
+    // Display next question button once an answer is selected until we reach end of questions
+    if (questions.length > currentQuestionIndex + 1) {
+        nextButton.style.display = "inline";
+    }
+
 }
 
-// Style the dom element based on the answer input
-function setStatusClass(element, correct) {
+// Style the dom element of all answer options based on the answer input
+function setAnswerStyle(element, correct) {
     clearStatusClass(element);
     if (correct) {
-      element.style.color = "#efeed4";
-      element.style.backgroundColor = "#3a4e05";
-      element.style.borderColor = "#3a4e05";
+        element.classList.add("correctAnswerButton");
     } else {
-        element.style.color = "#efeed4";
-        element.style.backgroundColor = "#7d3024";
-        element.style.borderColor = "#7d3024";
-        element.style.opacity = "0.2";
+        element.classList.add("wrongAnswerButton");
     }
 }
 
 function clearStatusClass(element) {
+    element.classList.remove('correctAnswerButton');
+    element.classList.remove('wrongAnswerButton');
+    element.classList.remove('selectedAnswer');
+}
 
-  }
 
 // Array with objects of questions and answers
 const questions = [
