@@ -381,7 +381,8 @@ header h1 {
     margin-top: 2vh;
     margin-right: 2vw;
     width: 80vw;
-    height: 15vh;
+    min-height: 15vh;
+    max-height: 20vh;
     border-radius: 30px;
     background-color: #efeed4;
     /*Align Text vertically and horizontally*/
