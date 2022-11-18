@@ -78,7 +78,7 @@ function showQuestion(question) {
 
 // Reset the state of the dom when clicking on next question
 function resetState() {
-    nextButton.style.display = "none";
+    nextButton.style.visibility = "hidden";
 }
 
 /**
@@ -119,7 +119,7 @@ function selectAnswer(event) {
 
     // Display next question button once an answer is selected until we reach end of QUESTIONS
     if (QUESTIONS.length > currentQuestionIndex + 1) {
-        nextButton.style.display = "inline";
+        nextButton.style.visibility = "visible";
     }
 
 }
