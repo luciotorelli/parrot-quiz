@@ -1,22 +1,18 @@
-
 /**
  * Get and initiate variables to be used on the functions of this Script.
  */
-let currentQuestionIndex;
-let questionContainerElement = document.getElementsByClassName("speech-bubble-3-div")[0];
-let questionElement = document.getElementsByClassName("question")[0];
-let answerOptions = document.getElementsByClassName("answer-options")[0];
+let currentQuestionIndex = 0;
+let questionContainerElement = document.getElementById("speech-bubble-3-div");
+let questionElement = document.getElementById("question");
+let answerOptionsDiv = document.getElementById("answer-options-div");
 let answerButtons = document.getElementsByClassName("answer");
-let nextButton = document.getElementsByClassName("next-question-button")[0];
+let nextButton = document.getElementById("next-question-button");
 
-let scoreElement = document.getElementsByClassName("score")[0];
-let wrongAnswersElement = document.getElementsByClassName("wrong-answers")[0];
+let scoreElement = document.getElementById("score");
+let wrongAnswersElement = document.getElementById("wrong-answers");
 
 let score = 0;
 let wrongAnswers = 0;
-localStorage.setItem('score', score);
-localStorage.setItem('wrongAnswers', wrongAnswers);
-
 
 /**
  * Add event listener to reset buttons and body styling, remove dataset from correct answer, add to current question index and call setNextQuestion function
@@ -49,7 +45,6 @@ window.onload = (event) => {
  * Function to start game, set question index and call setNextQuestion function
  */
 function startGame() {
-    console.log("Started Game");
     currentQuestionIndex = 0;
     setNextQuestion();
 }
@@ -59,7 +54,7 @@ function startGame() {
  */
 function setNextQuestion() {
     resetState();
-    showQuestion(questions[currentQuestionIndex]);
+    showQuestion(QUESTIONS[currentQuestionIndex]);
 }
 
 /**
@@ -89,25 +84,25 @@ function resetState() {
 /**
 * Select the correct answer based on the dataset.correct value and call the setStatusClass function
 */ 
-function selectAnswer(e) {
-    let selectedAnswer = e.target;
+function selectAnswer(event) {
+    let selectedAnswer = event.target;
     let correct = selectedAnswer.dataset.correct;
 
     // Call setAnswerStyle function on all answer options
-    Array.from(answerOptions.children).forEach(button => {
+    Array.from(answerOptionsDiv.children).forEach(button => {
         setAnswerStyle(button, button.dataset.correct);
     })
     
     // Remove body background image, replace with the color based on the selected answer by adding corresponding class and replace the question text with a fun fact.
     if (correct) {
         document.body.classList.add("correctAnswerBody");
-        questionElement.innerText = questions[currentQuestionIndex].fun_facts[0].text;
+        questionElement.innerText = QUESTIONS[currentQuestionIndex].fun_facts[0].text;
         score++;
         localStorage.setItem('score', score);
         scoreElement.innerText = `Score: ${localStorage.getItem('score')}`;
     } else {
         document.body.classList.add("wrongAnswerBody");
-        questionElement.innerText = questions[currentQuestionIndex].fun_facts[1].text;
+        questionElement.innerText = QUESTIONS[currentQuestionIndex].fun_facts[1].text;
         wrongAnswers++;
         localStorage.setItem('wrongAnswers', wrongAnswers);
         wrongAnswersElement.innerText = `Wrong Answers: ${localStorage.getItem('wrongAnswers')}`;
@@ -122,8 +117,8 @@ function selectAnswer(e) {
     // Increase opacity of the selected answer to 1
     selectedAnswer.classList.add("selectedAnswer");
 
-    // Display next question button once an answer is selected until we reach end of questions
-    if (questions.length > currentQuestionIndex + 1) {
+    // Display next question button once an answer is selected until we reach end of QUESTIONS
+    if (QUESTIONS.length > currentQuestionIndex + 1) {
         nextButton.style.display = "inline";
     }
 
@@ -146,8 +141,8 @@ function clearStatusClass(element) {
 }
 
 
-// Array with objects of questions and answers
-const questions = [
+// Array with objects of QUESTIONS and answers
+const QUESTIONS = [
     {
         question: 'How many species of parrots are there in the world? ',
         answers: [

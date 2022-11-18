@@ -377,7 +377,7 @@ header h1 {
     display: none;
 }
 
-.speech-bubble-3-div {
+#speech-bubble-3-div {
     align-self: center;
     margin-top: 2vh;
     margin-right: 2vw;
@@ -394,7 +394,7 @@ header h1 {
     font-size: 0.9em;
 }
 
-.speech-bubble-3-div p {
+#speech-bubble-3-div p {
     margin: 10px;
     text-align: center;
     color: black;
@@ -409,7 +409,7 @@ header h1 {
     background-color: #efeed4;
 }
 
-.answer-options {
+#answer-options-div {
     width: 90%;
     display: grid;
     grid-template-columns: 1fr;
@@ -430,7 +430,7 @@ header h1 {
     border: 5px inset #deb51d;
 }
 
-.next-question-button {
+#next-question-button {
     border: 5px outset #deb51d;
     padding: 8px;
     border-radius: 10px;
@@ -440,7 +440,7 @@ header h1 {
     width: 50%;
 }
 
-.next-question-button:active {
+#next-question-button:active {
     border: 5px inset #deb51d;
 }
 
