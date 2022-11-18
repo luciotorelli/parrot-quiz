@@ -1,6 +1,6 @@
 
 /**
- * Get variables to be used on the functions of this Script.
+ * Get and initiate variables to be used on the functions of this Script.
  */
 let currentQuestionIndex;
 let questionContainerElement = document.getElementsByClassName("speech-bubble-3-div")[0];
@@ -8,6 +8,15 @@ let questionElement = document.getElementsByClassName("question")[0];
 let answerOptions = document.getElementsByClassName("answer-options")[0];
 let answerButtons = document.getElementsByClassName("answer");
 let nextButton = document.getElementsByClassName("next-question-button")[0];
+
+let scoreElement = document.getElementsByClassName("score")[0];
+let wrongAnswersElement = document.getElementsByClassName("wrong-answers")[0];
+
+let score = 0;
+let wrongAnswers = 0;
+localStorage.setItem('score', score);
+localStorage.setItem('wrongAnswers', wrongAnswers);
+
 
 /**
  * Add event listener to reset buttons and body styling, remove dataset from correct answer, add to current question index and call setNextQuestion function
@@ -93,9 +102,21 @@ function selectAnswer(e) {
     if (correct) {
         document.body.classList.add("correctAnswerBody");
         questionElement.innerText = questions[currentQuestionIndex].fun_facts[0].text;
+        score++;
+        localStorage.setItem('score', score);
+        scoreElement.innerText = `Score: ${localStorage.getItem('score')}`;
     } else {
         document.body.classList.add("wrongAnswerBody");
         questionElement.innerText = questions[currentQuestionIndex].fun_facts[1].text;
+        wrongAnswers++;
+        localStorage.setItem('wrongAnswers', wrongAnswers);
+        wrongAnswersElement.innerText = `Wrong Answers: ${localStorage.getItem('wrongAnswers')}`;
+    }
+
+    //Remove event listener from all answer buttons after an option is selected
+    for (let i = 0; i < answerButtons.length; i++)
+    {
+        answerButtons[i].removeEventListener("click", selectAnswer);
     }
 
     // Increase opacity of the selected answer to 1

@@ -346,6 +346,7 @@ header h1 {
     width: 100%;
     align-content: space-between;
     justify-content: space-between;
+    white-space: nowrap;
 }
 
 .current-score p {
