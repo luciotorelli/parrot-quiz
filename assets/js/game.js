@@ -149,7 +149,7 @@ function selectAnswer() {
     //Remove event listener from all answer buttons after an option is selected
     for (let i = 0; i < answerButtons.length; i++)
     {
-        answerButtons[i].removeEventListener("click", selectAnswer);
+        answerButtons[i].removeEventListener("click", confirmAnswer);
     }
 
     // Increase opacity of the selected answer to 1
