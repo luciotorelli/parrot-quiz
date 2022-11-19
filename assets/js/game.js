@@ -7,6 +7,7 @@ let questionElement = document.getElementById("question");
 let answerOptionsDiv = document.getElementById("answer-options-div");
 let answerButtons = document.getElementsByClassName("answer");
 let nextButton = document.getElementById("next-question-button");
+let confirmAnswerButton = document.getElementById("confirm-answer-button");
 
 let scoreElement = document.getElementById("score");
 let wrongAnswersElement = document.getElementById("wrong-answers");
@@ -68,7 +69,7 @@ function showQuestion(question) {
     // Loop through all answers, for each answer update the button text, add an eventlistener that calls selectAnswer function, set the dataset based if the answer is correct.
     question.answers.forEach(answer => {
         answerButtons[answerButtonIndex].innerText = answer.text;
-        answerButtons[answerButtonIndex].addEventListener('click', selectAnswer);
+        answerButtons[answerButtonIndex].addEventListener('click', confirmAnswer);
         if (answer.correct) {
             answerButtons[answerButtonIndex].dataset.correct = answer.correct;
         }
@@ -76,9 +77,35 @@ function showQuestion(question) {
     })
 }
 
+/**
+ * Function to grade selected answer. 
+ */
+function confirmAnswer(event) {
+    let answerButtonsClickedDown = 1;
+    let selectedAnswer = event.target;
+    selectedAnswer.style.borderStyle = "inset";
+
+    if (answerButtonsClickedDown === 1) {
+        confirmAnswerButton.addEventListener('click', () => {
+            selectAnswer(event);
+        });
+        answerButtonsClickedDown++;
+    } else {
+        answerButtonsClickedDown = 1;
+        for (let i = 0; i < answerButtons.length; i++)
+        {
+            answerButtons[i].style.borderStyle = "outset";
+        }
+        confirmAnswerButton.addEventListener('click', () => {
+            selectAnswer(event);
+        });
+    }
+}
+
+
 // Reset the state of the dom when clicking on next question
 function resetState() {
-    nextButton.style.visibility = "hidden";
+    nextButton.style.opacity = "0.5";
 }
 
 /**
@@ -119,7 +146,7 @@ function selectAnswer(event) {
 
     // Display next question button once an answer is selected until we reach end of QUESTIONS
     if (QUESTIONS.length > currentQuestionIndex + 1) {
-        nextButton.style.visibility = "visible";
+        nextButton.style.opacity = "1";
     }
 
 }

@@ -470,7 +470,7 @@ header h1 {
     margin-top: -25px;
     align-self: flex-end;
     background-color: #efeed4;
-    border: solid 2px #000;
+    border: solid 2px #1e0d03;
 }
 
 #answer-options-div {
@@ -503,7 +503,7 @@ header h1 {
     justify-content: space-evenly;
 }
 
-#select-answer-button {
+#confirm-answer-button {
     display: block;
     border: 5px outset #deb51d;
     border-radius: 10px;
@@ -511,10 +511,10 @@ header h1 {
     transition: 0.5s;
     padding: 5px;
     width: 40%;
-    visibility: visible;
+    opacity: 0.5;
 }
 
-#select-answer-button:active {
+#confirm-answer-button:active {
     border: 5px inset #deb51d;
 }
 
@@ -526,7 +526,7 @@ header h1 {
     transition: 0.5s;
     padding: 5px;
     width: 40%;
-    visibility: hidden;
+    opacity: 0.5;
 }
 
 
