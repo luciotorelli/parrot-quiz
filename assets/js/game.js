@@ -15,31 +15,8 @@ let wrongAnswersElement = document.getElementById("wrong-answers");
 let score = 0;
 let wrongAnswers = 0;
 
-let selectedAnswer;
+let selectedAnswer = document.getElementsByClassName("answer")[0];
 
-/**
- * Add event listener to reset buttons and body styling, remove dataset from correct answer, add to current question index and call setNextQuestion function
- */
-nextButton.addEventListener('click', () => {
-    // Set all answer buttons style to unselected after clicking next question
-    for (let i = 0; i < answerButtons.length; i++)
-    {
-        answerButtons[i].style.borderStyle = "outset";
-    }
-
-    document.body.classList.remove("correctAnswerBody");
-    document.body.classList.remove("wrongAnswerBody");
-    let answers = document.getElementsByClassName("answer");
-    for (var i = 0; i < answers.length; i++) {
-        answers[i].classList.remove('correctAnswerButton');
-        answers[i].classList.remove('wrongAnswerButton');
-        if (answers[i].dataset) {
-            delete answers[i].dataset.correct;
-        }
-    }
-    currentQuestionIndex++;
-    setNextQuestion();
-})
 
 /**
  * On windows load, create a local storage item and set it to true to check if the game is running and start game.
@@ -77,7 +54,7 @@ function showQuestion(question) {
     // Loop through all answers, for each answer update the button text, add an eventlistener that calls selectAnswer function, set the dataset based if the answer is correct.
     question.answers.forEach(answer => {
         answerButtons[answerButtonIndex].innerText = answer.text;
-        answerButtons[answerButtonIndex].addEventListener('click', confirmAnswer);
+        answerButtons[answerButtonIndex].addEventListener('click', selectAnswer);
         if (answer.correct) {
             answerButtons[answerButtonIndex].dataset.correct = answer.correct;
         }
@@ -86,9 +63,9 @@ function showQuestion(question) {
 }
 
 /**
- * Function to grade selected answer. 
+ * Function to allow user to select answers. 
  */
-function confirmAnswer(event) {
+function selectAnswer(event) {
     selectedAnswer = event.target;
 
     // Set all answer buttons style to unselected in case the function is running for the second time
@@ -104,9 +81,9 @@ function confirmAnswer(event) {
     confirmAnswerButton.disabled = false;
 
     // Remove event listener in case user clicks on another answer    
-    confirmAnswerButton.removeEventListener('click', selectAnswer);
+    confirmAnswerButton.removeEventListener('click', confirmAnswer);
     // Call selectAnswer function once the confirmAnswerButton is clicked
-    confirmAnswerButton.addEventListener('click', selectAnswer);
+    confirmAnswerButton.addEventListener('click', confirmAnswer);
 
 }
 
@@ -120,7 +97,7 @@ function resetState() {
 /**
 * Select the correct answer based on the dataset.correct value and call the setStatusClass function
 */ 
-function selectAnswer() {
+function confirmAnswer() {
     let correct = selectedAnswer.dataset.correct;
 
     confirmAnswerButton.style.opacity = "0.5";
@@ -156,12 +133,49 @@ function selectAnswer() {
     selectedAnswer.classList.add("selectedAnswer");
 
     // Display next question button once an answer is selected until we reach end of QUESTIONS
+    nextButton.style.opacity = "1";
+    nextButton.disabled = false;
+
+    if (currentQuestionIndex == 9) {
+        nextButton.innerHTML = "Show my score!";
+    }
+}
+
+/**
+ * Add event listener to reset buttons and body styling, remove dataset from correct answer, add to current question index and call setNextQuestion function
+ */
+ nextButton.addEventListener('click', () => {
+
     if (QUESTIONS.length > currentQuestionIndex + 1) {
-        nextButton.style.opacity = "1";
-        nextButton.disabled = false;
+        // Set all answer buttons style to unselected after clicking next question
+        for (let i = 0; i < answerButtons.length; i++)
+        {
+            answerButtons[i].style.borderStyle = "outset";
+        }
+
+        document.body.classList.remove("correctAnswerBody");
+        document.body.classList.remove("wrongAnswerBody");
+        let answers = document.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+            answers[i].classList.remove('correctAnswerButton');
+            answers[i].classList.remove('wrongAnswerButton');
+            if (answers[i].dataset) {
+                delete answers[i].dataset.correct;
+            }
+        }
+        currentQuestionIndex++;
+        setNextQuestion();
+    } else if (currentQuestionIndex == 9) {
+        let answers = document.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+            if (answers[i].dataset) {
+                delete answers[i].dataset.correct;
+            }
+        }
+        showScoreboard();
     }
 
-}
+})
 
 // Style the dom element of all answer options based on the answer input
 function setAnswerStyle(element, correct) {
@@ -177,4 +191,16 @@ function clearStatusClass(element) {
     element.classList.remove('correctAnswerButton');
     element.classList.remove('wrongAnswerButton');
     element.classList.remove('selectedAnswer');
+}
+
+
+/**
+ * Function to display score board after last question
+ */
+function showScoreboard() {
+    document.body.classList.remove("correctAnswerBody");
+    document.body.classList.remove("wrongAnswerBody");
+    answerOptionsDiv.style.display = "none";
+    document.getElementById("current-score").style.display = "none";
+    document.getElementById("next-and-select-answer-div").style.display = "none";
 }
