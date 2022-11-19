@@ -15,6 +15,8 @@ let wrongAnswersElement = document.getElementById("wrong-answers");
 let score = 0;
 let wrongAnswers = 0;
 
+let selectedAnswer;
+
 /**
  * Add event listener to reset buttons and body styling, remove dataset from correct answer, add to current question index and call setNextQuestion function
  */
@@ -87,7 +89,7 @@ function showQuestion(question) {
  * Function to grade selected answer. 
  */
 function confirmAnswer(event) {
-    let selectedAnswer = event.target;
+    selectedAnswer = event.target;
 
     // Set all answer buttons style to unselected in case the function is running for the second time
     for (let i = 0; i < answerButtons.length; i++)
@@ -100,10 +102,11 @@ function confirmAnswer(event) {
     // Make confirm answer button available
     confirmAnswerButton.style.opacity = "1";
     confirmAnswerButton.disabled = false;
+
+    // Remove event listener in case user clicks on another answer    
+    confirmAnswerButton.removeEventListener('click', selectAnswer);
     // Call selectAnswer function once the confirmAnswerButton is clicked
-    confirmAnswerButton.addEventListener('click', () => {
-        selectAnswer(event);
-    })
+    confirmAnswerButton.addEventListener('click', selectAnswer);
 
 }
 
@@ -117,8 +120,7 @@ function resetState() {
 /**
 * Select the correct answer based on the dataset.correct value and call the setStatusClass function
 */ 
-function selectAnswer(event) {
-    let selectedAnswer = event.target;
+function selectAnswer() {
     let correct = selectedAnswer.dataset.correct;
 
     confirmAnswerButton.style.opacity = "0.5";
