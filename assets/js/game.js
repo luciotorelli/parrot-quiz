@@ -19,6 +19,12 @@ let wrongAnswers = 0;
  * Add event listener to reset buttons and body styling, remove dataset from correct answer, add to current question index and call setNextQuestion function
  */
 nextButton.addEventListener('click', () => {
+    // Set all answer buttons style to unselected after clicking next question
+    for (let i = 0; i < answerButtons.length; i++)
+    {
+        answerButtons[i].style.borderStyle = "outset";
+    }
+
     document.body.classList.remove("correctAnswerBody");
     document.body.classList.remove("wrongAnswerBody");
     let answers = document.getElementsByClassName("answer");
@@ -81,31 +87,31 @@ function showQuestion(question) {
  * Function to grade selected answer. 
  */
 function confirmAnswer(event) {
-    let answerButtonsClickedDown = 1;
     let selectedAnswer = event.target;
-    selectedAnswer.style.borderStyle = "inset";
 
-    if (answerButtonsClickedDown === 1) {
-        confirmAnswerButton.addEventListener('click', () => {
-            selectAnswer(event);
-        });
-        answerButtonsClickedDown++;
-    } else {
-        answerButtonsClickedDown = 1;
-        for (let i = 0; i < answerButtons.length; i++)
-        {
-            answerButtons[i].style.borderStyle = "outset";
-        }
-        confirmAnswerButton.addEventListener('click', () => {
-            selectAnswer(event);
-        });
+    // Set all answer buttons style to unselected in case the function is running for the second time
+    for (let i = 0; i < answerButtons.length; i++)
+    {
+        answerButtons[i].style.borderStyle = "outset";
     }
+
+    // Style the current selected answer
+    selectedAnswer.style.borderStyle = "inset";
+    // Make confirm answer button available
+    confirmAnswerButton.style.opacity = "1";
+    confirmAnswerButton.disabled = false;
+    // Call selectAnswer function once the confirmAnswerButton is clicked
+    confirmAnswerButton.addEventListener('click', () => {
+        selectAnswer(event);
+    })
+
 }
 
 
 // Reset the state of the dom when clicking on next question
 function resetState() {
     nextButton.style.opacity = "0.5";
+    nextButton.disabled = true;
 }
 
 /**
@@ -114,6 +120,9 @@ function resetState() {
 function selectAnswer(event) {
     let selectedAnswer = event.target;
     let correct = selectedAnswer.dataset.correct;
+
+    confirmAnswerButton.style.opacity = "0.5";
+    confirmAnswerButton.disabled = true;
 
     // Call setAnswerStyle function on all answer options
     Array.from(answerOptionsDiv.children).forEach(button => {
@@ -147,6 +156,7 @@ function selectAnswer(event) {
     // Display next question button once an answer is selected until we reach end of QUESTIONS
     if (QUESTIONS.length > currentQuestionIndex + 1) {
         nextButton.style.opacity = "1";
+        nextButton.disabled = false;
     }
 
 }
