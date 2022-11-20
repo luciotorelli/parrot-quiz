@@ -51,7 +51,7 @@ function nicknameSubmitted() {
         nickNameErrorModal.style.display = "block";
     } else {
         localStorage.setItem('nickname', document.getElementById("nickname").value);
-        window.location = "../nickname-submitted.html";
+        window.location.href = "/nickname-submitted.html";
     }
 }
 
@@ -126,5 +126,5 @@ document.addEventListener('keydown', (event) => {
 });
 
 function gameStarted() {
-    window.location = "../question.html";
+    window.location.href = "/question.html";
 }
