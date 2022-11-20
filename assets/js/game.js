@@ -8,6 +8,7 @@ let answerOptionsDiv = document.getElementById("answer-options-div");
 let answerButtons = document.getElementsByClassName("answer");
 let nextButton = document.getElementById("next-question-button");
 let confirmAnswerButton = document.getElementById("confirm-answer-button");
+let homeButton = document.getElementById("home-button");
 
 let scoreElement = document.getElementById("score");
 let wrongAnswersElement = document.getElementById("wrong-answers");
@@ -92,6 +93,7 @@ function selectAnswer(event) {
 function resetState() {
     nextButton.style.opacity = "0.5";
     nextButton.disabled = true;
+    homeButton.style.display = "none";
 }
 
 /**
@@ -225,9 +227,18 @@ function showScoreboard(event) {
 
     returnScoreboard();
 
+    homeButton.style.display = "flex";
     document.body.classList.remove("correctAnswerBody");
     document.body.classList.remove("wrongAnswerBody");
     answerOptionsDiv.style.display = "none";
     document.getElementById("current-score").style.display = "none";
     document.getElementById("next-and-select-answer-div").style.display = "none";
 }
+
+homeButton.addEventListener('click', (event) => {
+    localStorage.removeItem('gameStarted');
+    localStorage.removeItem('wrongAnswers');
+    localStorage.removeItem('score');
+    localStorage.removeItem('nickname');
+    window.location = "/";
+});

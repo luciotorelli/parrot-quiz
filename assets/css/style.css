@@ -582,9 +582,29 @@ header h1 {
     display: none;
     flex-direction: column;
     align-items: center;
+    margin-top: auto;
 }
 
 .scoreboard-table-end-game {
     width: 90%;
     padding: 10px 20px 10px 0px;
+}
+
+#home-button {
+    border: 5px outset #deb51d;
+    background-color: #deb51d;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.5s;
+    margin-top: auto;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#home-button:active {
+    border: 5px outset #deb51d;
+    background-color: #deb51d;
+    color: #000;
 }
