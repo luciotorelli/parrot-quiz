@@ -51,7 +51,12 @@ function nicknameSubmitted() {
         nickNameErrorModal.style.display = "block";
     } else {
         localStorage.setItem('nickname', document.getElementById("nickname").value);
-        window.location.href = "/nickname-submitted.html";
+        if (window.location.href.includes("luciotorelli.github")) {
+            window.location.href = "/parrot-quiz/nickname-submitted.html";
+        } else {
+            window.location.href = "/nickname-submitted.html";
+        }
+
     }
 }
 
@@ -126,5 +131,10 @@ document.addEventListener('keydown', (event) => {
 });
 
 function gameStarted() {
-    window.location.href = "/question.html";
+    if (window.location.href.includes("luciotorelli.github")) {
+        window.location.href = "/parrot-quiz/question.html";
+    } else {
+        window.location.href = "/question.html";
+    }
+
 }
