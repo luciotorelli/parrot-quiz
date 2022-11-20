@@ -42,16 +42,19 @@
       </div>
     </section>
     <section id="scoreboard-modal">
-      <div class="scoreboard-div">
+      <div class="scoreboard-div-modal">
         <div class="scoreboard-modal-header">
           <button type="button" class="close-modal-button">&times;</button>
           <h2>Scoreboard</h2>
         </div>
-        <div class="scoreboard-body">
-        <ol>
-          <li>Scoreboard</li>
-        </ol>
-        </div>
+        <div id="scoreboard-div" class="scoreboard-body">
+          <table id="scoreboard-table">
+              <thead>
+                <th>Nickname</th>
+                <th>Score</th>
+              </thead>
+          </table>
+      </div>
       </div>      
     </section>
     <section id="nickname-error-modal">
@@ -65,6 +68,7 @@
         </div>
       </div>     
     </section>
+    <script src="assets/js/return-scoreboard.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

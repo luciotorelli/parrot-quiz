@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (startGameButton) {
         startGameButton.addEventListener("click", gameStarted);
     }
+
+    returnScoreboard();
+
 })
 
 /**

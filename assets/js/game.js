@@ -144,7 +144,7 @@ function confirmAnswer() {
 /**
  * Add event listener to reset buttons and body styling, remove dataset from correct answer, add to current question index and call setNextQuestion function
  */
- nextButton.addEventListener('click', () => {
+ nextButton.addEventListener('click', (event) => {
 
     if (QUESTIONS.length > currentQuestionIndex + 1) {
         // Set all answer buttons style to unselected after clicking next question
@@ -172,7 +172,7 @@ function confirmAnswer() {
                 delete answers[i].dataset.correct;
             }
         }
-        showScoreboard();
+        showScoreboard(event);
     }
 
 })
@@ -197,7 +197,34 @@ function clearStatusClass(element) {
 /**
  * Function to display score board after last question
  */
-function showScoreboard() {
+function showScoreboard(event) {
+    const NICKNAME = localStorage.getItem('nickname');
+    const FINAL_SCORE = localStorage.getItem('score');
+    const FINAL_WRONG_ANSWERS = localStorage.getItem('wrongAnswers');
+
+    // Get the scoreboard array, if not created, create one. 
+    const SCOREBOARD = JSON.parse(localStorage.getItem("scoreboard")) || [];
+
+    event.preventDefault();
+    // Create SCORE array with value from NICKNAME and FINAL_SCORE
+    const SCORE = {
+        score: FINAL_SCORE,
+        name: NICKNAME
+    };
+
+    // Push SCORE array into SCOREBOARD
+    SCOREBOARD.push(SCORE);
+    // Sort SCOREBOARD based on the higher scores
+    SCOREBOARD.sort( (a,b) => b.score - a.score);
+    // Remove any entry past 5 latest top scores
+    SCOREBOARD.splice(5);
+    // Save SCOREBOARD into local storage
+    localStorage.setItem('scoreboard', JSON.stringify(SCOREBOARD));
+
+    document.getElementsByClassName("scoreboard-end-game")[0].style.display = "flex";
+
+    returnScoreboard();
+
     document.body.classList.remove("correctAnswerBody");
     document.body.classList.remove("wrongAnswerBody");
     answerOptionsDiv.style.display = "none";

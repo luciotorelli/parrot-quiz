@@ -238,10 +238,11 @@ header h1 {
 }
 
 /* Scoreboard div */
-.scoreboard-div {
+.scoreboard-div-modal {
     background-color: #deb51d;
     color: #1e0d03;
     width: 80%;
+    text-align: center;
     /*center vertically*/
     top: 50%;
     left: 50%;
@@ -252,6 +253,10 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.scoreboard-div-modal table {
+    width: 100%;
 }
 
 /* Scoreboard modal header */
@@ -270,7 +275,8 @@ header h1 {
 /* Scoreboard body */
 
 .scoreboard-body {
-    padding: 20px 10px 20px 35px;
+    width: 80%;
+    padding: 10px 30px 10px 0px;
 }
 
 /* Nickname error modal */
@@ -562,3 +568,23 @@ header h1 {
     opacity: 1;
 }
 
+/* Scoreboard end game */
+
+.scoreboard-end-game {
+    background-color: #deb51d;
+    color: #1e0d03;
+    width: 80%;
+    text-align: center;
+    /*center vertically*/
+    position: relative;
+    /*round corners*/
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreboard-table-end-game {
+    width: 90%;
+    padding: 10px 20px 10px 0px;
+}
