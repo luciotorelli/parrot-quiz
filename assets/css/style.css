@@ -37,13 +37,15 @@ header h1 {
     align-items: center;
     margin: 0 10px;
     border-radius: 10px;
+    align-self: center;
+    justify-self: center;
 }
 
 .speech-bubble-div {
     align-self: flex-end;
     margin-top: 5vh;
     margin-right: 2vw;
-    width: 80vw;
+    width: 85%;
     height: 18vh;
     border-radius: 30px;
     background-color: #efeed4;
@@ -353,13 +355,15 @@ header h1 {
     align-items: center;
     margin: 0 10px;
     border-radius: 10px;
+    align-self: center;
+    justify-self: center;
 }
 
 .speech-bubble-2-div {
     align-self: flex-start;
     margin-top: 5vh;
     margin-left: 3vw;
-    width: 80vw;
+    width: 85%;
     height: 32vh;
     border-radius: 30px;
     background-color: #efeed4;
@@ -432,6 +436,8 @@ header h1 {
     align-items: center;
     margin: 0 10px;
     border-radius: 10px;
+    align-self: center;
+    justify-self: center;
 }
 
 .question-image-div {
@@ -450,7 +456,7 @@ header h1 {
     align-self: center;
     margin-top: 2vh;
     margin-right: 2vw;
-    width: 80vw;
+    width: 85%;
     min-height: 15vh;
     max-height: 20vh;
     border-radius: 30px;
@@ -590,6 +596,8 @@ header h1 {
     padding: 10px 20px 10px 0px;
 }
 
+/* Home Button */
+
 #home-button {
     border: 5px outset #deb51d;
     background-color: #deb51d;
@@ -608,3 +616,105 @@ header h1 {
     background-color: #deb51d;
     color: #000;
 }
+
+
+@media screen and (min-width: 425px) {
+    .intro-section,
+    .nickname-submitted-section,
+    .question-section {
+        width: 75%;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .intro-section,
+    .nickname-submitted-section,
+    .question-section {
+        width: 55%;
+    }
+
+    #answer-options-div {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .intro-section,
+    .nickname-submitted-section,
+    .question-section {
+        width: 40%;
+    }
+
+    .how-to-play-modal {
+        background-color: #deb51d;
+        width: 20%;
+        max-height: 50%;
+        /*center vertically*/
+        top: 25%;
+        left: 5%;
+        transform: translate(0, 0);
+        /*round corners*/
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        overflow: hidden;
+    }
+
+    .how-to-play-div {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        padding-right: 0;
+        height: 100%;
+    }
+
+    .how-to-play-modal-body {
+        padding: 2px 0 0 15px;
+        margin: auto 0;
+    }
+
+    #scoreboard-modal {
+        background-color: #deb51d;
+        width: 20%;
+        max-height: 50%;
+        /*center vertically*/
+        top: 25%;
+        left: 75%;
+        transform: translate(0, 0);
+        /*round corners*/
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .scoreboard-div-modal {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        height: 100%;
+    }
+
+    .scoreboard-body {
+        padding: 10px 5px 10px 0px;
+    }
+
+    .close-modal-button,
+    .how-to-play-button,
+    .scoreboard-button {
+        display: none;
+    }
+    
+    #scoreboard-div {
+        display: flex;
+        margin: auto 0;
+    }
+    
+
+}
+
