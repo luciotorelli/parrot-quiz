@@ -251,5 +251,9 @@ homeButton.addEventListener('click', (event) => {
     localStorage.removeItem('wrongAnswers');
     localStorage.removeItem('score');
     localStorage.removeItem('nickname');
-    window.location = "/";
+    if (window.location.href.includes("luciotorelli.github")) {
+        window.location.href = "/parrot-quiz";
+    } else {
+        window.location.href = "/";
+    }
 });
