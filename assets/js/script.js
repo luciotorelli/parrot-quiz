@@ -126,6 +126,5 @@ document.addEventListener('keydown', (event) => {
 });
 
 function gameStarted() {
-    localStorage.setItem('gameStarted', "true");
     window.location = "/question.html";
 }

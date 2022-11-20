@@ -1,7 +1,7 @@
 /**
  * Get and initiate variables to be used on the functions of this Script.
  */
-let currentQuestionIndex = 0;
+let currentQuestionIndex = localStorage.getItem('currentQuestionIndex') || 0;
 let questionContainerElement = document.getElementById("speech-bubble-3-div");
 let questionElement = document.getElementById("question");
 let answerOptionsDiv = document.getElementById("answer-options-div");
@@ -23,7 +23,13 @@ let selectedAnswer = document.getElementsByClassName("answer")[0];
  * On windows load, create a local storage item and set it to true to check if the game is running and start game.
  */
 window.onload = (event) => {
-    if (localStorage.getItem("gameStarted") === "true") {
+    if (localStorage.getItem("gameRunning") === "true") {
+        currentQuestionIndex = localStorage.getItem('currentQuestionIndex');
+        setNextQuestion();
+    } else {
+        localStorage.setItem('gameRunning', "true");
+        currentQuestionIndex = 0;
+        localStorage.setItem('currentQuestionIndex', currentQuestionIndex);
         startGame();
     }
 };
@@ -32,7 +38,6 @@ window.onload = (event) => {
  * Function to start game, set question index and call setNextQuestion function
  */
 function startGame() {
-    currentQuestionIndex = 0;
     setNextQuestion();
 }
 
@@ -138,9 +143,14 @@ function confirmAnswer() {
     nextButton.style.opacity = "1";
     nextButton.disabled = false;
 
+    currentQuestionIndex = localStorage.getItem("currentQuestionIndex");
+    currentQuestionIndex++; 
+
     if (currentQuestionIndex == 9) {
         nextButton.innerHTML = "Show my score!";
     }
+
+    localStorage.setItem('currentQuestionIndex', currentQuestionIndex)
 }
 
 /**
@@ -165,7 +175,6 @@ function confirmAnswer() {
                 delete answers[i].dataset.correct;
             }
         }
-        currentQuestionIndex++;
         setNextQuestion();
     } else if (currentQuestionIndex == 9) {
         let answers = document.getElementsByClassName("answer");
