@@ -1,7 +1,7 @@
 /**
  * Get and initiate variables to be used on the functions of this Script.
  */
-let currentQuestionIndex = localStorage.getItem('currentQuestionIndex') || 0;
+let currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex')) || 0;
 let questionContainerElement = document.getElementById("speech-bubble-3-div");
 let questionElement = document.getElementById("question");
 let answerOptionsDiv = document.getElementById("answer-options-div");
@@ -24,7 +24,7 @@ let selectedAnswer = document.getElementsByClassName("answer")[0];
  */
 window.onload = (event) => {
     if (localStorage.getItem("gameRunning") === "true") {
-        currentQuestionIndex = localStorage.getItem('currentQuestionIndex');
+        currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'));
         setNextQuestion();
     } else {
         localStorage.setItem('gameRunning', "true");
@@ -143,14 +143,15 @@ function confirmAnswer() {
     nextButton.style.opacity = "1";
     nextButton.disabled = false;
 
-    currentQuestionIndex = localStorage.getItem("currentQuestionIndex");
-    currentQuestionIndex++; 
-
     if (currentQuestionIndex == 9) {
         nextButton.innerHTML = "Show my score!";
     }
 
-    localStorage.setItem('currentQuestionIndex', currentQuestionIndex)
+    currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'));
+    currentQuestionIndex++; 
+
+    localStorage.setItem('currentQuestionIndex', currentQuestionIndex);
+    
 }
 
 /**
@@ -158,7 +159,7 @@ function confirmAnswer() {
  */
  nextButton.addEventListener('click', (event) => {
 
-    if (QUESTIONS.length > currentQuestionIndex + 1) {
+    if (QUESTIONS.length > currentQuestionIndex) {
         // Set all answer buttons style to unselected after clicking next question
         for (let i = 0; i < answerButtons.length; i++)
         {
@@ -176,7 +177,7 @@ function confirmAnswer() {
             }
         }
         setNextQuestion();
-    } else if (currentQuestionIndex == 9) {
+    } else {
         let answers = document.getElementsByClassName("answer");
         for (var i = 0; i < answers.length; i++) {
             if (answers[i].dataset) {
@@ -245,7 +246,8 @@ function showScoreboard(event) {
 }
 
 homeButton.addEventListener('click', (event) => {
-    localStorage.removeItem('gameStarted');
+    localStorage.removeItem('gameRunning');
+    localStorage.removeItem('currentQuestionIndex');
     localStorage.removeItem('wrongAnswers');
     localStorage.removeItem('score');
     localStorage.removeItem('nickname');
