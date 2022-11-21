@@ -14,7 +14,11 @@ body {
 }
 
 body {
-    background-image: url("../images/feather-background.jpg");
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 60%;
+
     font-family: nunito, sans-serif;
     display: flex;
     flex-direction: column;
