@@ -37,9 +37,9 @@ function nicknameSubmitted() {
     } else {
         localStorage.setItem('nickname', document.getElementById("nickname").value);
         if (window.location.href.includes("luciotorelli.github")) {
-            window.location.href = "/parrot-quiz/nickname-submitted.html";
+            window.location.href = "/parrot-quiz/introduction.html";
         } else {
-            window.location.href = "/nickname-submitted.html";
+            window.location.href = "/introduction.html";
         }
 
     }
