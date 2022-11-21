@@ -25,7 +25,7 @@
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "HookyQR.beautify",
    "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "vscode.html-language-features"
    },
    "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"

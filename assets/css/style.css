@@ -703,19 +703,14 @@ header h1 {
 
     .scoreboard-body {
         padding: 10px 5px 10px 0px;
+        margin: auto 0;
     }
 
     .close-modal-button,
     .how-to-play-button,
     .scoreboard-button {
         display: none;
-    }
-    
-    #scoreboard-div {
-        display: flex;
-        margin: auto 0;
-    }
-    
+    }    
 
 }
 
