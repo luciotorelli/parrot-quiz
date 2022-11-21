@@ -9,12 +9,13 @@ let answerButtons = document.getElementsByClassName("answer");
 let nextButton = document.getElementById("next-question-button");
 let confirmAnswerButton = document.getElementById("confirm-answer-button");
 let homeButton = document.getElementById("home-button");
+let questionH1Element = document.getElementById("question-h1");
 
 let scoreElement = document.getElementById("score");
 let wrongAnswersElement = document.getElementById("wrong-answers");
 
-let score = 0;
-let wrongAnswers = 0;
+let score = parseInt(localStorage.getItem('score')) || 0;
+let wrongAnswers = parseInt(localStorage.getItem('wrongAnswers')) || 0;
 
 let selectedAnswer = document.getElementsByClassName("answer")[0];
 
@@ -25,13 +26,30 @@ let selectedAnswer = document.getElementsByClassName("answer")[0];
 window.onload = (event) => {
     if (localStorage.getItem("gameRunning") === "true") {
         currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'));
-        setNextQuestion();
+        
+        // If score and wrong answers exist on the local storage, replace the elements with it's value, otherwise, keep it 0
+        if (localStorage.getItem('score')) {
+            scoreElement.innerText = `Score: ${localStorage.getItem('score')}`;
+        }
+        if (localStorage.getItem('wrongAnswers')) {
+            wrongAnswersElement.innerText = `Wrong Answers: ${localStorage.getItem('wrongAnswers')}`;
+        }
+
+        // If user refreshes page after confirming last question, bring them to the scoreboard, otherwise, set next question.
+        if (currentQuestionIndex > 9) {
+            showScoreboard(event);
+        } else {
+            setNextQuestion();
+        }
+
     } else {
         localStorage.setItem('gameRunning', "true");
         currentQuestionIndex = 0;
         localStorage.setItem('currentQuestionIndex', currentQuestionIndex);
         startGame();
     }
+
+
 };
 
 /**
@@ -53,6 +71,8 @@ function setNextQuestion() {
  * Function to update dom elements for question and answer
  */
 function showQuestion(question) {
+    // Update question h1 element with current question index
+    questionH1Element.innerHTML = `Question ${currentQuestionIndex+1} out of 10`;
     // Set question speech bubble text to current question
     questionElement.innerText = question.question;
     // Initialize answerButtonIndex for looping between answers
