@@ -70,7 +70,7 @@ header h1 {
 }
 
 #nickname {
-    margin: 15vh 2vw 2vw 2vw;
+    margin: 15vh 5px 10px 5px;
     padding: 8px;
     border-radius: 10px;
     text-align: center;
@@ -431,6 +431,7 @@ header h1 {
     color: #efeed4;
     background-color: rgb(28, 12, 3, 0.7);
     height: 92%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;

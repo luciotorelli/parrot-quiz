@@ -61,6 +61,7 @@ function showQuestion(question) {
     question.answers.forEach(answer => {
         answerButtons[answerButtonIndex].innerText = answer.text;
         answerButtons[answerButtonIndex].addEventListener('click', selectAnswer);
+        answerButtons[answerButtonIndex].disabled = false;
         if (answer.correct) {
             answerButtons[answerButtonIndex].dataset.correct = answer.correct;
         }
@@ -130,10 +131,11 @@ function confirmAnswer() {
         wrongAnswersElement.innerText = `Wrong Answers: ${localStorage.getItem('wrongAnswers')}`;
     }
 
-    //Remove event listener from all answer buttons after an option is selected
+    //Remove event listener and disable all answer buttons after an option is selected
     for (let i = 0; i < answerButtons.length; i++)
     {
         answerButtons[i].removeEventListener("click", confirmAnswer);
+        answerButtons[i].disabled = true;
     }
 
     // Increase opacity of the selected answer to 1
