@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <!-- Header-->
     <header>
       <h1>Parrot Quiz</h1>
     </header>
+    <!-- Nickname Submitted Section -->
     <section class="nickname-submitted-section">
       <div class="speech-bubble-2-div">
         <p class="message-2"></p>
@@ -24,6 +26,7 @@
         <button id="scoreboard-button" class="scoreboard-button">Scoreboard</button>
       </div>
     </section>
+    <!-- How To Play Modal -->
     <section id="howToPlayModal" class="how-to-play-modal">
       <div class="how-to-play-div">
         <div class="how-to-play-modal-header">
@@ -33,18 +36,19 @@
         <div class="how-to-play-modal-body">
         <ol>
           <li>Introduce yourself to Maple, the Green Cheek Conure.</li>
-          <li>Answer each parrot related question by selecting one of the 4 options</li>
-          <li>Click Next whenever ready for the next question</li>
-          <li>Use the scoreboard to compare your score with others</li>
+          <li>Answer each parrot related question by selecting one of the 4 possible answers.</li>
+          <li>Click Next when you are ready for the next question.</li>
+          <li>Use the scoreboard to compare your score with others.</li>
         </ol>
         </div>
       </div>
     </section>
+    <!-- Scoreboard Modal-->
     <section id="scoreboard-modal">
       <div class="scoreboard-div-modal">
         <div class="scoreboard-modal-header">
           <button type="button" class="close-modal-button">&times;</button>
-          <h2>Scoreboard</h2>
+          <h2>Top 5 Players</h2>
         </div>
         <div id="scoreboard-div" class="scoreboard-body">
           <table id="scoreboard-table">
@@ -56,6 +60,7 @@
       </div>
       </div>      
     </section>
+    <!-- Load Scripts -->
     <script src="assets/js/home.js"></script>
     <script src="assets/js/modals.js"></script>
     <script src="assets/js/return-scoreboard.js"></script>

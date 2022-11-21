@@ -2,33 +2,35 @@
  * Get and initiate variables to be used on the functions of this Script.
  */
 let currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex')) || 0;
+
 let questionContainerElement = document.getElementById("speech-bubble-3-div");
 let questionElement = document.getElementById("question");
 let answerOptionsDiv = document.getElementById("answer-options-div");
+let questionH1Element = document.getElementById("question-h1");
+let parrotPhotoElement = document.getElementsByClassName("maple-photo-3")[0];
+
 let answerButtons = document.getElementsByClassName("answer");
 let nextButton = document.getElementById("next-question-button");
 let confirmAnswerButton = document.getElementById("confirm-answer-button");
 let homeButton = document.getElementById("home-button");
-let questionH1Element = document.getElementById("question-h1");
-let parrotPhotoElement = document.getElementsByClassName("maple-photo-3")[0];
-
-let scoreElement = document.getElementById("score");
-let wrongAnswersElement = document.getElementById("wrong-answers");
 
 let score = parseInt(localStorage.getItem('score')) || 0;
 let wrongAnswers = parseInt(localStorage.getItem('wrongAnswers')) || 0;
+let scoreElement = document.getElementById("score");
+let wrongAnswersElement = document.getElementById("wrong-answers");
 
 let selectedAnswer = document.getElementsByClassName("answer")[0];
 
 
 /**
- * On windows load, create a local storage item and set it to true to check if the game is running and start game.
+ * On windows load, check gameRunning key on local storage to check if the game is running, if it is, start game, otherwise, show next question.
  */
 window.onload = (event) => {
     if (localStorage.getItem("gameRunning") === "true") {
+        // Update currentQuestionIndex with key saved on local storage
         currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'));
-        
-        // If score and wrong answers exist on the local storage, replace the elements with it's value, otherwise, keep it 0
+
+        // If score and wrong answers exist on the local storage, replace the elements with it's value, otherwise, set it to 0
         if (localStorage.getItem('score')) {
             scoreElement.innerText = `Score: ${localStorage.getItem('score')}`;
         }
@@ -72,7 +74,7 @@ function setNextQuestion() {
  * Function to update dom elements for question and answer
  */
 function showQuestion(question) {
-    // Update question h1 element with current question index
+    // Update question h1 element to display current question
     questionH1Element.innerHTML = `Question ${currentQuestionIndex+1} out of 10`;
     // Update parrot photo to neutral photo
     parrotPhotoElement.src = 'assets/images/maple-photo-3.webp';
@@ -93,18 +95,18 @@ function showQuestion(question) {
 }
 
 /**
- * Function to allow user to select answers. 
+ * Function to allow user to select one of the 4 answers. 
  */
 function selectAnswer(event) {
     selectedAnswer = event.target;
 
-    // Set all answer buttons style to unselected in case the function is running for the second time
+    // Set all answer buttons style to unselected in case the function is running for the second time on the same question
     for (let i = 0; i < answerButtons.length; i++)
     {
         answerButtons[i].style.borderStyle = "outset";
     }
 
-    // Style the current selected answer
+    // Style the current selected answer to 'clicked' style.
     selectedAnswer.style.borderStyle = "inset";
     // Make confirm answer button available
     confirmAnswerButton.style.opacity = "1";
@@ -118,7 +120,7 @@ function selectAnswer(event) {
 }
 
 
-// Reset the state of the dom when clicking on next question
+// Reset styling of nextButton and home button when clicking on next question
 function resetState() {
     nextButton.style.opacity = "0.5";
     nextButton.disabled = true;
@@ -131,6 +133,7 @@ function resetState() {
 function confirmAnswer() {
     let correct = selectedAnswer.dataset.correct;
 
+    // Disable confirm answer button once clicked
     confirmAnswerButton.style.opacity = "0.5";
     confirmAnswerButton.disabled = true;
 
@@ -139,7 +142,7 @@ function confirmAnswer() {
         setAnswerStyle(button, button.dataset.correct);
     })
     
-    // Remove body background image, replace with the color based on the selected answer by adding corresponding class and replace the question text with a fun fact.
+    // Replace body background image with a color and replace parrot photo based on the selected answer by adding corresponding class and replace the question text with a fun fact.
     if (correct) {
         document.body.classList.add("correctAnswerBody");
         questionElement.innerText = QUESTIONS[currentQuestionIndex].fun_facts[0].text;
@@ -156,7 +159,7 @@ function confirmAnswer() {
         parrotPhotoElement.src = 'assets/images/maple-photo-wrong-answer.webp';
     }
 
-    //Remove event listener and disable all answer buttons after an option is selected
+    // Remove event listener and disable all answer buttons after an option is selected
     for (let i = 0; i < answerButtons.length; i++)
     {
         answerButtons[i].removeEventListener("click", confirmAnswer);
@@ -169,14 +172,13 @@ function confirmAnswer() {
     // Display next question button once an answer is selected until we reach end of QUESTIONS
     nextButton.style.opacity = "1";
     nextButton.disabled = false;
-
     if (currentQuestionIndex == 9) {
         nextButton.innerHTML = "Show my score!";
     }
 
+    // Get currentQuestionIndex from the local storage, update variable, set it back to the local storage.
     currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'));
     currentQuestionIndex++; 
-
     localStorage.setItem('currentQuestionIndex', currentQuestionIndex);
     
 }
@@ -216,7 +218,9 @@ function confirmAnswer() {
 
 })
 
-// Style the dom element of all answer options based on the answer input
+/**
+ * Style the dom element of all answer options based on the answer input
+ */
 function setAnswerStyle(element, correct) {
     clearStatusClass(element);
     if (correct) {
@@ -226,6 +230,9 @@ function setAnswerStyle(element, correct) {
     }
 }
 
+/**
+ * Remove class styling from answer buttons
+ */ 
 function clearStatusClass(element) {
     element.classList.remove('correctAnswerButton');
     element.classList.remove('wrongAnswerButton');
@@ -234,7 +241,7 @@ function clearStatusClass(element) {
 
 
 /**
- * Function to display score board after last question
+ * Function to display scoreboard after last question
  */
 function showScoreboard(event) {
     const NICKNAME = localStorage.getItem('nickname');
@@ -259,12 +266,13 @@ function showScoreboard(event) {
     SCOREBOARD.splice(5);
     // Save SCOREBOARD into local storage
     localStorage.setItem('scoreboard', JSON.stringify(SCOREBOARD));
-
+    // Display scoreboard element
     document.getElementsByClassName("scoreboard-end-game")[0].style.display = "flex";
 
     endQuizMessage();
     returnScoreboard();
 
+    // Hide question and answer elements, display home button
     homeButton.style.display = "flex";
     document.body.classList.remove("correctAnswerBody");
     document.body.classList.remove("wrongAnswerBody");
@@ -273,13 +281,15 @@ function showScoreboard(event) {
     document.getElementById("next-and-select-answer-div").style.display = "none";
 }
 
-// Function to display last message based on user score
+/**
+ * Function to display last message based on user score
+ */
 function endQuizMessage() {
     const FINAL_SCORE = parseInt(localStorage.getItem('score'));
     if (FINAL_SCORE <= 3) {
-        questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You don't know a lot about parrots but I hope you learned some today!`;
+        questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You don't know a lot about parrots but I hope you learned something today!`;
     } else if ( (FINAL_SCORE >= 4) && (FINAL_SCORE <= 9) ) {
-        questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You know quite a lot about parrots, I am impressed!`;
+        questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You know quite a lot about parrots. I am impressed!`;
         startConfetti();
     } else {
         questionElement.innerText = `Thanks for completing the quiz, you scored an impressive ${FINAL_SCORE} out of 10 questions! You know more about parrots than most people, well done!`;
@@ -289,6 +299,9 @@ function endQuizMessage() {
     questionH1Element.innerHTML = 'Quiz completed!';
 }
 
+/**
+ * Add eventlistener to home button, reset game state and bring back to home page
+ */
 homeButton.addEventListener('click', (event) => {
     localStorage.removeItem('gameRunning');
     localStorage.removeItem('currentQuestionIndex');

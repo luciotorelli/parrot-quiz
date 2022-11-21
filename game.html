@@ -12,9 +12,11 @@
 </head>
 
 <body>
+    <!-- Header-->
     <header class="question-header">
         <h1 id="question-h1">Question 1 out of 10</h1>
     </header>
+    <!-- Question Section-->
     <section class="question-section">
         <div id="current-score">
             <p id="score">Score: 0</p>
@@ -28,16 +30,19 @@
             <p id="question">How many species of parrots are there in the world? </p>
         </div>
         <img src="assets/images/maple-photo-3.webp" class="maple-photo-3" alt="Parrot Waving Hi">
+        <!-- Answer Options-->
         <div id="answer-options-div">
             <button class="answer">27</button>
             <button class="answer">350</button>
             <button class="answer">522</button>
             <button class="answer">103</button>
         </div>
+        <!-- Next and Confirm Answer Buttons-->
         <div id="next-and-select-answer-div">
             <button id="confirm-answer-button" disabled>Submit Answer!</button>
             <button id="next-question-button" disabled>Next</button>
         </div>
+        <!-- Scoreboard Div-->
         <div id="scoreboard-div" class="scoreboard-end-game">
             <table id="scoreboard-table" class="scoreboard-table-end-game">
                 <thead>
@@ -48,6 +53,7 @@
         </div>
         <button id="home-button">Restart</button>
     </section>
+    <!-- Load Scripts-->
     <script src="assets/js/questions.js"></script>
     <script src="assets/js/game.js"></script>
     <script src="assets/js/return-scoreboard.js"></script>

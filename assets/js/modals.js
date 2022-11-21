@@ -1,5 +1,5 @@
 /**
- * Get the how to play and scoreboard; modal, buttons and the close button. 
+ * Create variables for how to play, nickname and scoreboard; modal, buttons and the close button elements. 
  */ 
  let howToPlayModal = document.getElementById("howToPlayModal");
  let howToPlayButton = document.getElementsByClassName("how-to-play-button")[0];
@@ -34,7 +34,6 @@ scoreboardButton.addEventListener("click", modalCheck);
 /**
  * When the user clicks on how to play close button (x), close the modal
  */ 
-
 closeHowToPlayModal.onclick = function () {
     howToPlayModal.style.display = "none";
 }
@@ -56,7 +55,7 @@ if (closeNickNameErrorModal) {
 }
 
 /**
- * When the user clicks anywhere outside of the how to play modal, scoreboard or nick name error modal, close it
+ * When the user clicks anywhere outside of the how to play modal, scoreboard or nick name error modal, close it.
  */
 window.onclick = function (event) {
     if (event.target == howToPlayModal && window.innerWidth < 1024) {
@@ -88,7 +87,7 @@ document.addEventListener('keydown', (event) => {
  * Function to display modals in case user resizes screen, closes modal and resizes it back
  */
  window.addEventListener('resize', function(event) {
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth >= 1024) {
         howToPlayModal.style.display = "flex";
         scoreboardModal.style.display = "flex";
     } else {

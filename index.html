@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <!-- Header -->
     <header>
       <h1>Parrot Quiz</h1>
     </header>
+    <!-- Intro Section -->
     <section class="intro-section">
       <div class="speech-bubble-div">
-        <p>Hi, I am Maple! Your parr-host of the day. Please submit your nickname below so I can best squawk at you.</p>
+        <p>Hi, I'm Maple! Your parr-host for the day. Please submit your nickname below so I can best squawk at you.</p>
       </div>
       <img src="assets/images/maple-photo-1.webp" class="maple-photo-1" alt="Parrot Waving Hi">
       <input id="nickname" type="text" placeholder="Nickname" />
@@ -25,6 +27,7 @@
         <button id="scoreboard-button" class="scoreboard-button" href="/scoreboard">Scoreboard</button>
       </div>
     </section>
+    <!-- How To Play Modal-->
     <section id="howToPlayModal" class="how-to-play-modal">
       <div class="how-to-play-div">
         <div class="how-to-play-modal-header">
@@ -34,18 +37,19 @@
         <div class="how-to-play-modal-body">
         <ol>
           <li>Introduce yourself to Maple, the Green Cheek Conure.</li>
-          <li>Answer each parrot related question by selecting one of the 4 options</li>
-          <li>Click Next whenever ready for the next question</li>
-          <li>Use the scoreboard to compare your score with others</li>
+          <li>Answer each parrot related question by selecting one of the 4 possible answers.</li>
+          <li>Click Next when you are ready for the next question.</li>
+          <li>Use the scoreboard to compare your score with others.</li>
         </ol>
         </div>
       </div>
     </section>
+    <!-- Scoreboard Modal -->
     <section id="scoreboard-modal">
       <div class="scoreboard-div-modal">
         <div class="scoreboard-modal-header">
           <button type="button" class="close-modal-button">&times;</button>
-          <h2>Scoreboard</h2>
+          <h2>Top 5 Players</h2>
         </div>
         <div id="scoreboard-div" class="scoreboard-body">
           <table id="scoreboard-table">
@@ -57,6 +61,7 @@
       </div>
       </div>      
     </section>
+    <!-- Nickname Error Modal -->
     <section id="nickname-error-modal">
       <div class="nickname-error-div">
         <div class="nickname-error-modal-header">
@@ -68,6 +73,7 @@
         </div>
       </div>     
     </section>
+    <!-- Load Scrips-->
     <script src="assets/js/return-scoreboard.js"></script>
     <script src="assets/js/home.js"></script>
     <script src="assets/js/modals.js"></script>

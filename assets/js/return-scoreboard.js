@@ -1,3 +1,7 @@
+/**
+ * Function to save current score to local storage and update scoreboard table element with new score
+ */
+
 function returnScoreboard() {
     const SCOREBOARD_TABLE = document.getElementById("scoreboard-table");
     const SCOREBOARD = JSON.parse(localStorage.getItem("scoreboard")) || [];

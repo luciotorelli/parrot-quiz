@@ -13,6 +13,7 @@ body {
     height: 100%;
 }
 
+/* Body */
 body {
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
@@ -348,7 +349,7 @@ header h1 {
     background-color: #7d3024;
 }
 
-/* Nickname submitted page */
+/* Introduction page */
 
 .nickname-submitted-section {
     color: #efeed4;
@@ -412,7 +413,7 @@ header h1 {
     border: 5px inset #deb51d;
 }
 
-/* Question Section */
+/* Question Page */
 
 .question-header h1 {
     font-size: 1.5em;
@@ -622,7 +623,7 @@ header h1 {
     color: #000;
 }
 
-
+/* Screens above 425px height - Mobile */
 @media screen and (min-width: 425px) {
     .intro-section,
     .nickname-submitted-section,
@@ -632,6 +633,7 @@ header h1 {
 
 }
 
+/* Screens above 768px height - Tablets */
 @media screen and (min-width: 768px) {
     .intro-section,
     .nickname-submitted-section,
@@ -645,6 +647,7 @@ header h1 {
 
 }
 
+/* Screens above 1024px height - Desktop */
 @media screen and (min-width: 1024px) {
     .intro-section,
     .nickname-submitted-section,
