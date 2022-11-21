@@ -59,9 +59,9 @@ if (closeNickNameErrorModal) {
  * When the user clicks anywhere outside of the how to play modal, scoreboard or nick name error modal, close it
  */
 window.onclick = function (event) {
-    if (event.target == howToPlayModal) {
+    if (event.target == howToPlayModal && window.innerWidth < 1024) {
         howToPlayModal.style.display = "none";
-    } else if (event.target == scoreboardModal) {
+    } else if (event.target == scoreboardModal && window.innerWidth < 1024) {
         scoreboardModal.style.display = "none";
     } else if (event.target == nickNameErrorModal) {
         nickNameErrorModal.style.display = "none";
@@ -69,10 +69,10 @@ window.onclick = function (event) {
 }
 
 /**
- * When the user presses the ESC key, close the how to play modal, scoreboard or nick name error modal and focus on Nickname input.
+ * When the user presses the ESC key, close the how to play modal, scoreboard or nick name error modal if screen smaller than 1024 pixels and focus on Nickname input.
  */
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && window.innerWidth < 1024) {
         howToPlayModal.style.display = "none";
         scoreboardModal.style.display = "none";
         if (nickNameErrorModal) {
@@ -83,3 +83,16 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
+
+/**
+ * Function to display modals in case user resizes screen, closes modal and resizes it back
+ */
+ window.addEventListener('resize', function(event) {
+    if (window.innerWidth > 1024) {
+        howToPlayModal.style.display = "flex";
+        scoreboardModal.style.display = "flex";
+    } else {
+        howToPlayModal.style.display = "none";
+        scoreboardModal.style.display = "none";
+    }
+}, true);
