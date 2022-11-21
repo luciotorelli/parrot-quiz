@@ -10,6 +10,7 @@ let nextButton = document.getElementById("next-question-button");
 let confirmAnswerButton = document.getElementById("confirm-answer-button");
 let homeButton = document.getElementById("home-button");
 let questionH1Element = document.getElementById("question-h1");
+let parrotPhotoElement = document.getElementsByClassName("maple-photo-3")[0];
 
 let scoreElement = document.getElementById("score");
 let wrongAnswersElement = document.getElementById("wrong-answers");
@@ -73,6 +74,8 @@ function setNextQuestion() {
 function showQuestion(question) {
     // Update question h1 element with current question index
     questionH1Element.innerHTML = `Question ${currentQuestionIndex+1} out of 10`;
+    // Update parrot photo to neutral photo
+    parrotPhotoElement.src = 'assets/images/maple-photo-3.webp';
     // Set question speech bubble text to current question
     questionElement.innerText = question.question;
     // Initialize answerButtonIndex for looping between answers
@@ -143,12 +146,14 @@ function confirmAnswer() {
         score++;
         localStorage.setItem('score', score);
         scoreElement.innerText = `Score: ${localStorage.getItem('score')}`;
+        parrotPhotoElement.src = 'assets/images/maple-photo-right-answer.webp';
     } else {
         document.body.classList.add("wrongAnswerBody");
         questionElement.innerText = QUESTIONS[currentQuestionIndex].fun_facts[1].text;
         wrongAnswers++;
         localStorage.setItem('wrongAnswers', wrongAnswers);
         wrongAnswersElement.innerText = `Wrong Answers: ${localStorage.getItem('wrongAnswers')}`;
+        parrotPhotoElement.src = 'assets/images/maple-photo-wrong-answer.webp';
     }
 
     //Remove event listener and disable all answer buttons after an option is selected

@@ -52,9 +52,9 @@ function preGameMessage() {
 
 function gameStarted() {
     if (window.location.href.includes("luciotorelli.github")) {
-        window.location.href = "/parrot-quiz/question.html";
+        window.location.href = "/parrot-quiz/game.html";
     } else {
-        window.location.href = "/question.html";
+        window.location.href = "/game.html";
     }
 
 }
