@@ -257,6 +257,7 @@ function showScoreboard(event) {
 
     document.getElementsByClassName("scoreboard-end-game")[0].style.display = "flex";
 
+    endQuizMessage();
     returnScoreboard();
 
     homeButton.style.display = "flex";
@@ -265,6 +266,22 @@ function showScoreboard(event) {
     answerOptionsDiv.style.display = "none";
     document.getElementById("current-score").style.display = "none";
     document.getElementById("next-and-select-answer-div").style.display = "none";
+}
+
+// Function to display last message based on user score
+function endQuizMessage() {
+    const FINAL_SCORE = parseInt(localStorage.getItem('score'));
+    if (FINAL_SCORE <= 3) {
+        questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You don't know a lot about parrots but I hope you learned some today!`;
+    } else if ( (FINAL_SCORE >= 4) && (FINAL_SCORE <= 9) ) {
+        questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You know quite a lot about parrots, I am impressed!`;
+        startConfetti();
+    } else {
+        questionElement.innerText = `Thanks for completing the quiz, you scored an impressive ${FINAL_SCORE} out of 10 questions! You know more about parrots than most people, well done!`;
+        startConfetti();
+    }
+
+    questionH1Element.innerHTML = 'Quiz completed!';
 }
 
 homeButton.addEventListener('click', (event) => {
@@ -279,3 +296,4 @@ homeButton.addEventListener('click', (event) => {
         window.location.href = "/";
     }
 });
+
