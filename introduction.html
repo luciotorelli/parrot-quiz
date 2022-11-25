@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parrot Quiz</title>
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <!-- Header-->
-    <header>
-      <h1>Parrot Quiz</h1>
-    </header>
-    <!-- Nickname Submitted Section -->
-    <section class="nickname-submitted-section">
-      <div class="speech-bubble-2-div">
-        <p class="message-2"></p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Quiz to test your knowledge on parrots">
+  <meta name="keywords" content="Parrots, Test, Quiz">
+  <meta name="author" content="Lucio Torelli">
+
+  <title>Parrot Quiz</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!-- Header-->
+  <header>
+    <h1>Parrot Quiz</h1>
+  </header>
+  <!-- Nickname Submitted Section -->
+  <div class="nickname-submitted-section">
+    <div class="speech-bubble-2-div">
+      <p class="message-2"></p>
+    </div>
+    <img src="assets/images/maple-photo-2.webp" class="maple-photo-2" alt="Parrot Waving Hi">
+    <button id="start-game-button">I promise to never clip wings!</button>
+    <div class="navbar">
+      <button id="how-to-play-button" class="how-to-play-button">How to Play</button>
+      <button id="scoreboard-button" class="scoreboard-button">Scoreboard</button>
+    </div>
+  </div>
+  <!-- How To Play Modal -->
+  <div id="howToPlayModal" class="how-to-play-modal">
+    <div class="how-to-play-div">
+      <div class="how-to-play-modal-header">
+        <button type="button" class="close-modal-button">&times;</button>
+        <h2>How to play?</h2>
       </div>
-      <img src="assets/images/maple-photo-2.webp" class="maple-photo-2" alt="Parrot Waving Hi">
-      <button id="start-game-button">I promise to never clip wings!</button>
-      <div class="navbar">
-        <button id="how-to-play-button" class="how-to-play-button">How to Play</button>
-        <button id="scoreboard-button" class="scoreboard-button">Scoreboard</button>
-      </div>
-    </section>
-    <!-- How To Play Modal -->
-    <section id="howToPlayModal" class="how-to-play-modal">
-      <div class="how-to-play-div">
-        <div class="how-to-play-modal-header">
-          <button type="button" class="close-modal-button">&times;</button>
-          <h2>How to play?</h2>
-        </div>
-        <div class="how-to-play-modal-body">
+      <div class="how-to-play-modal-body">
         <ol>
           <li>Introduce yourself to Maple, the Green Cheek Conure.</li>
           <li>Answer each parrot related question by selecting one of the 4 possible answers.</li>
           <li>Click Next when you are ready for the next question.</li>
           <li>Use the scoreboard to compare your score with others.</li>
         </ol>
-        </div>
       </div>
-    </section>
-    <!-- Scoreboard Modal-->
-    <section id="scoreboard-modal">
-      <div class="scoreboard-div-modal">
-        <div class="scoreboard-modal-header">
-          <button type="button" class="close-modal-button">&times;</button>
-          <h2>Top 5 Players</h2>
-        </div>
-        <div id="scoreboard-div" class="scoreboard-body">
-          <table id="scoreboard-table">
-              <thead>
-                <th>Nickname</th>
-                <th>Score</th>
-              </thead>
-          </table>
+    </div>
+  </div>
+  <!-- Scoreboard Modal-->
+  <div id="scoreboard-modal">
+    <div class="scoreboard-div-modal">
+      <div class="scoreboard-modal-header">
+        <button type="button" class="close-modal-button">&times;</button>
+        <h2>Top 5 Players</h2>
       </div>
-      </div>      
-    </section>
-    <!-- Load Scripts -->
-    <script src="assets/js/home.js"></script>
-    <script src="assets/js/modals.js"></script>
-    <script src="assets/js/return-scoreboard.js"></script>
-  </body>
+      <div id="scoreboard-div" class="scoreboard-body">
+        <table id="scoreboard-table">
+          <thead>
+            <tr>
+              <th>Nickname</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Load Scripts -->
+  <script src="assets/js/home.js"></script>
+  <script src="assets/js/modals.js"></script>
+  <script src="assets/js/return-scoreboard.js"></script>
+</body>
+
 </html>

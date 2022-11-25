@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Import Google Font Nunito*/
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
@@ -21,8 +28,13 @@ body {
     background-position: 20% 60%;
 
     font-family: nunito, sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 header h1 {
@@ -37,17 +49,28 @@ header h1 {
     color: #efeed4;
     background-color: rgb(28, 12, 3, 0.7);
     height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 10px;
     border-radius: 10px;
-    align-self: center;
-    justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
 }
 
 .speech-bubble-div {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     margin-top: 5vh;
     margin-right: 2vw;
     width: 85%;
@@ -55,9 +78,15 @@ header h1 {
     border-radius: 30px;
     background-color: #efeed4;
     /*Align Text vertically and horizontally*/
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .speech-bubble-div p {
@@ -70,7 +99,8 @@ header h1 {
     border-radius: 50%;
     width: 4em;
     margin-left: 3vw;
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     background-color: #efeed4;
 }
 
@@ -86,6 +116,8 @@ header h1 {
     padding: 8px;
     border-radius: 10px;
     background-color: #deb51d;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -103,8 +135,12 @@ header h1 {
     margin-top: auto;
     margin-bottom: 20px;
     width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .how-to-play-button {
@@ -114,6 +150,8 @@ header h1 {
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -134,6 +172,8 @@ header h1 {
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -177,13 +217,22 @@ header h1 {
     /*center vertically*/
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     position: relative;
     /*round corners*/
     border-radius: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 /* How to play modal header */
@@ -253,13 +302,22 @@ header h1 {
     /*center vertically*/
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     position: relative;
     /*round corners*/
     border-radius: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .scoreboard-div-modal table {
@@ -316,13 +374,22 @@ header h1 {
     /*center vertically*/
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     position: relative;
     /*round corners*/
     border-radius: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 /* Scoreboard modal header */
@@ -355,17 +422,28 @@ header h1 {
     color: #efeed4;
     background-color: rgb(28, 12, 3, 0.7);
     height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 10px;
     border-radius: 10px;
-    align-self: center;
-    justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
 }
 
 .speech-bubble-2-div {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     margin-top: 5vh;
     margin-left: 3vw;
     width: 85%;
@@ -373,9 +451,15 @@ header h1 {
     border-radius: 30px;
     background-color: #efeed4;
     /*Align Text vertically and horizontally*/
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .speech-bubble-2-div p {
@@ -388,7 +472,8 @@ header h1 {
     border-radius: 50%;
     width: 4em;
     margin-right: 3vw;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     background-color: #efeed4;
 }
 
@@ -399,6 +484,8 @@ header h1 {
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     margin-top: 12vh;
 }
@@ -420,10 +507,15 @@ header h1 {
 }
 
 #current-score {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    align-content: space-between;
-    justify-content: space-between;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     white-space: nowrap;
 }
 
@@ -437,18 +529,32 @@ header h1 {
     background-color: rgb(28, 12, 3, 0.7);
     height: 92%;
     width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 10px;
     border-radius: 10px;
-    align-self: center;
-    justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
 }
 
 .question-image-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .question-image {
@@ -459,7 +565,9 @@ header h1 {
 }
 
 #speech-bubble-3-div {
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     margin-top: 2vh;
     margin-right: 2vw;
     width: 85%;
@@ -468,9 +576,15 @@ header h1 {
     border-radius: 30px;
     background-color: #efeed4;
     /*Align Text vertically and horizontally*/
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 5px;
     font-size: 0.9em;
 }
@@ -486,14 +600,17 @@ header h1 {
     width: 3em;
     margin-right: 3vw;
     margin-top: -25px;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     background-color: #efeed4;
     border: solid 2px #1e0d03;
 }
 
 #answer-options-div {
     width: 90%;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     gap: 0.5em;
     margin-top: auto;
@@ -505,6 +622,8 @@ header h1 {
     padding: 10px;
     border-radius: 10px;
     background-color: #deb51d;
+    -webkit-transition: 0.9s;
+    -o-transition: 0.9s;
     transition: 0.9s;
 }
 
@@ -514,12 +633,19 @@ header h1 {
 
 #next-and-select-answer-div {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-content: center;
-    justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 10px;
     margin-top: 5px;
-    justify-content: space-evenly;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
 }
 
 #confirm-answer-button {
@@ -527,6 +653,8 @@ header h1 {
     border: 5px outset #deb51d;
     border-radius: 10px;
     background-color: #deb51d;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     padding: 5px;
     width: 40%;
@@ -542,6 +670,8 @@ header h1 {
     border: 5px outset #deb51d;
     border-radius: 10px;
     background-color: #deb51d;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     padding: 5px;
     width: 40%;
@@ -592,8 +722,13 @@ header h1 {
     /*round corners*/
     border-radius: 20px;
     display: none;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: auto;
 }
 
@@ -612,6 +747,8 @@ header h1 {
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     margin-top: auto;
     margin-bottom: 10px;
@@ -649,6 +786,7 @@ header h1 {
     }
 
     #answer-options-div {
+        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
 
@@ -675,19 +813,30 @@ header h1 {
         /*center vertically*/
         top: 25%;
         left: 5%;
-        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0);
         /*round corners*/
         border-radius: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         justify-items: center;
     }
 
     .how-to-play-div {
         top: 0;
         left: 0;
-        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0);
         padding-right: 0;
         height: 100%;
         width: 80%;
@@ -705,19 +854,30 @@ header h1 {
         /*center vertically*/
         top: 25%;
         left: 75%;
-        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0);
         /*round corners*/
         border-radius: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         justify-items: center;
     }
 
     .scoreboard-div-modal {
         top: 0;
         left: 0;
-        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0);
         height: 100%;
         width: 80%;
     }
@@ -742,4 +902,3 @@ header h1 {
     }
 
 }
-

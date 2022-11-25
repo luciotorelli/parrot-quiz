@@ -1,81 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parrot Quiz</title>
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <h1>Parrot Quiz</h1>
-    </header>
-    <!-- Intro Section -->
-    <section class="intro-section">
-      <div class="speech-bubble-div">
-        <p>Hi, I'm Maple! Your parr-host for the day. Please submit your nickname below so I can best squawk at you.</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Quiz to test your knowledge on parrots">
+  <meta name="keywords" content="Parrots, Test, Quiz">
+  <meta name="author" content="Lucio Torelli">
+
+  <title>Parrot Quiz</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Parrot Quiz</h1>
+  </header>
+  <!-- Intro Section -->
+  <div class="intro-section">
+    <div class="speech-bubble-div">
+      <p>Hi, I'm Maple! Your parr-host for the day. Please submit your nickname below so I can best squawk at you.</p>
+    </div>
+    <img src="assets/images/maple-photo-1.webp" class="maple-photo-1" alt="Parrot Waving Hi">
+    <input id="nickname" type="text" placeholder="Nickname">
+    <button id="submit-nickname-button">Submit Nickname!</button>
+    <div class="navbar">
+      <button id="how-to-play-button" class="how-to-play-button">How to Play</button>
+      <button id="scoreboard-button" class="scoreboard-button">Scoreboard</button>
+    </div>
+  </div>
+  <!-- How To Play Modal-->
+  <div id="howToPlayModal" class="how-to-play-modal">
+    <div class="how-to-play-div">
+      <div class="how-to-play-modal-header">
+        <button type="button" class="close-modal-button">&times;</button>
+        <h2>How to play?</h2>
       </div>
-      <img src="assets/images/maple-photo-1.webp" class="maple-photo-1" alt="Parrot Waving Hi">
-      <input id="nickname" type="text" placeholder="Nickname" />
-      <button id="submit-nickname-button">Submit Nickname!</button>
-      <div class="navbar">
-        <button id="how-to-play-button" class="how-to-play-button">How to Play</button>
-        <button id="scoreboard-button" class="scoreboard-button" href="/scoreboard">Scoreboard</button>
-      </div>
-    </section>
-    <!-- How To Play Modal-->
-    <section id="howToPlayModal" class="how-to-play-modal">
-      <div class="how-to-play-div">
-        <div class="how-to-play-modal-header">
-          <button type="button" class="close-modal-button">&times;</button>
-          <h2>How to play?</h2>
-        </div>
-        <div class="how-to-play-modal-body">
+      <div class="how-to-play-modal-body">
         <ol>
           <li>Introduce yourself to Maple, the Green Cheek Conure.</li>
           <li>Answer each parrot related question by selecting one of the 4 possible answers.</li>
           <li>Click Next when you are ready for the next question.</li>
           <li>Use the scoreboard to compare your score with others.</li>
         </ol>
-        </div>
       </div>
-    </section>
-    <!-- Scoreboard Modal -->
-    <section id="scoreboard-modal">
-      <div class="scoreboard-div-modal">
-        <div class="scoreboard-modal-header">
-          <button type="button" class="close-modal-button">&times;</button>
-          <h2>Top 5 Players</h2>
-        </div>
-        <div id="scoreboard-div" class="scoreboard-body">
-          <table id="scoreboard-table">
-              <thead>
-                <th>Nickname</th>
-                <th>Score</th>
-              </thead>
-          </table>
+    </div>
+  </div>
+  <!-- Scoreboard Modal -->
+  <div id="scoreboard-modal">
+    <div class="scoreboard-div-modal">
+      <div class="scoreboard-modal-header">
+        <button type="button" class="close-modal-button">&times;</button>
+        <h2>Top 5 Players</h2>
       </div>
-      </div>      
-    </section>
-    <!-- Nickname Error Modal -->
-    <section id="nickname-error-modal">
-      <div class="nickname-error-div">
-        <div class="nickname-error-modal-header">
-          <button type="button" class="close-modal-button close-modal-button-error close-button-nickname">&times;</button>
-          <h2>Error!</h2>
-        </div>
-        <div class="nickname-error-modal-body">
-          <p>Please type in a nickname.</p>
-        </div>
-      </div>     
-    </section>
-    <!-- Load Scrips-->
-    <script src="assets/js/return-scoreboard.js"></script>
-    <script src="assets/js/home.js"></script>
-    <script src="assets/js/modals.js"></script>
-  </body>
+      <div id="scoreboard-div" class="scoreboard-body">
+        <table id="scoreboard-table">
+          <thead>
+            <tr>
+              <th>Nickname</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Nickname Error Modal -->
+  <div id="nickname-error-modal">
+    <div class="nickname-error-div">
+      <div class="nickname-error-modal-header">
+        <button type="button" class="close-modal-button close-modal-button-error close-button-nickname">&times;</button>
+        <h2>Error!</h2>
+      </div>
+      <div class="nickname-error-modal-body">
+        <p>Please type in a nickname.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Load Scrips-->
+  <script src="assets/js/return-scoreboard.js"></script>
+  <script src="assets/js/home.js"></script>
+  <script src="assets/js/modals.js"></script>
+</body>
+
 </html>
