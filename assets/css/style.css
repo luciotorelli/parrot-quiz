@@ -602,6 +602,7 @@ header h1 {
     padding: 10px 20px 10px 0px;
 }
 
+
 /* Home Button */
 
 #home-button {
@@ -631,6 +632,12 @@ header h1 {
         width: 75%;
     }
 
+    .how-to-play-div,
+    .scoreboard-div-modal,
+    .nickname-error-div {
+        width: 70%;
+    }
+
 }
 
 /* Screens above 768px height - Tablets */
@@ -643,6 +650,12 @@ header h1 {
 
     #answer-options-div {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .how-to-play-div,
+    .scoreboard-div-modal,
+    .nickname-error-div {
+        width: 50%;
     }
 
 }
@@ -669,7 +682,6 @@ header h1 {
         flex-direction: column;
         align-items: center;
         justify-items: center;
-        overflow: hidden;
     }
 
     .how-to-play-div {
@@ -678,6 +690,7 @@ header h1 {
         transform: translate(0, 0);
         padding-right: 0;
         height: 100%;
+        width: 80%;
     }
 
     .how-to-play-modal-body {
@@ -706,6 +719,7 @@ header h1 {
         left: 0;
         transform: translate(0, 0);
         height: 100%;
+        width: 80%;
     }
 
     .scoreboard-body {
@@ -713,11 +727,19 @@ header h1 {
         margin: auto 0;
     }
 
+    .nickname-error-div {
+        width: 35%;
+    }
+
     .close-modal-button,
     .how-to-play-button,
     .scoreboard-button {
         display: none;
-    }    
+    }
+    
+    .close-button-nickname {
+        display: inline;
+    }
 
 }
 
