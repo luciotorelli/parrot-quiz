@@ -1,7 +1,7 @@
 /**
  * Array with objects of questions, answers and fun facts.
  */
- const QUESTIONS = [
+const QUESTIONS = [
     {
         question: 'How many parrot species are there in the world? ',
         answers: [

@@ -35,7 +35,7 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    color:#000;
+    color: #000;
 }
 
 header h1 {
@@ -120,7 +120,7 @@ header h1 {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
-    color:#000;
+    color: #000;
 }
 
 #submit-nickname-button:hover {
@@ -131,7 +131,7 @@ header h1 {
 
 #submit-nickname-button:active {
     border: 5px inset #deb51d;
-    color:#000;
+    color: #000;
 }
 
 .navbar {
@@ -149,7 +149,7 @@ header h1 {
 .how-to-play-button {
     border: 5px outset #deb51d;
     background-color: #deb51d;
-    color:#000;
+    color: #000;
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
@@ -166,13 +166,13 @@ header h1 {
 
 .how-to-play-button:active {
     border: 5px inset #deb51d;
-    color:#000;
+    color: #000;
 }
 
 .scoreboard-button {
     border: 5px outset #deb51d;
     background-color: #deb51d;
-    color:#000;
+    color: #000;
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
@@ -189,7 +189,7 @@ header h1 {
 
 .scoreboard-button:active {
     border: 5px inset #deb51d;
-    color:#000;
+    color: #000;
 }
 
 /* How to play modal */
@@ -487,7 +487,7 @@ header h1 {
 #start-game-button {
     border: 5px outset #deb51d;
     background-color: #deb51d;
-    color:#000;
+    color: #000;
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
@@ -505,7 +505,7 @@ header h1 {
 
 #start-game-button:active {
     border: 5px inset #deb51d;
-    color:#000;
+    color: #000;
 }
 
 /* Question Page */
@@ -617,12 +617,12 @@ header h1 {
     -webkit-transition: 0.9s;
     -o-transition: 0.9s;
     transition: 0.9s;
-    color:#000;
+    color: #000;
 }
 
 .answer:active {
     border: 5px inset #deb51d;
-    color:#000;
+    color: #000;
 }
 
 #next-and-select-answer-div {
@@ -653,12 +653,12 @@ header h1 {
     padding: 5px;
     width: 40%;
     opacity: 0.5;
-    color:#000;
+    color: #000;
 }
 
 #confirm-answer-button:active {
     border: 5px inset #deb51d;
-    color:#000;
+    color: #000;
 }
 
 #next-question-button {
@@ -672,13 +672,13 @@ header h1 {
     padding: 5px;
     width: 40%;
     opacity: 0.5;
-    color:#000;
+    color: #000;
 }
 
 
 #next-question-button:active {
     border: 5px inset #deb51d;
-    color:#000;
+    color: #000;
 }
 
 .correctAnswerButton {
@@ -741,7 +741,7 @@ header h1 {
 #home-button {
     border: 5px outset #deb51d;
     background-color: #deb51d;
-    color:#000;
+    color: #000;
     text-decoration: none;
     border-radius: 10px;
     padding: 10px;
