@@ -256,6 +256,7 @@ header h1 {
     border-top-right-radius: 20px;
     padding-right: 10px;
     background-color: #deb51d;
+    color: black;
 }
 
 .close-modal-button:hover,
@@ -414,6 +415,7 @@ header h1 {
 /* Close Nickname error button */
 .close-modal-button-error {
     background-color: #7d3024;
+    color: #efeed4;
 }
 
 /* Introduction page */
