@@ -25,14 +25,15 @@ Parrot Quiz is an interactive multiple question game to test your knowledge abou
 8.  [Testing](https://github.com/luciotorelli/parrot-quiz#testing)
     - [8.1 Code validation](https://github.com/luciotorelli/parrot-quiz#testing)
     - [8.2 Test cases (User Feedback - Screenshots)](https://github.com/luciotorelli/parrot-quiz#testing)
-    - 8.3 Fixed Bugs
-    - 8.4 Open Bugs
-    - 8.5 Supported Screens and Browsers
+    - [8.3 Fixed Bugs](https://github.com/luciotorelli/parrot-quiz#testing)
+    - [8.4 Open Bugs](https://github.com/luciotorelli/parrot-quiz#testing)
+    - [8.5 Supported Screens and Browsers](https://github.com/luciotorelli/parrot-quiz#testing)
 9.  [Deployment](https://github.com/luciotorelli/parrot-quiz#deployment)
 10. [Credits](https://github.com/luciotorelli/parrot-quiz#credits)
-    - 10.1 Special Thanks!
-    - 10.2 Tutorials and Documentation used
-    - 10.2 Resources used
+    - [10.1 Special Thanks!](https://github.com/luciotorelli/parrot-quiz#special-thanks)
+    - [10.2 Resources used](https://github.com/luciotorelli/parrot-quiz#resources-used)
+    - [10.3 Tutorials and Documentation used](https://github.com/luciotorelli/parrot-quiz#tutorials-and-documentation-used-no-code-were-copied-and-pasted-only-inspired-and-adapted)
+    - [10.4 Imported library](https://github.com/luciotorelli/parrot-quiz#imported-library)
 
 
 
@@ -127,7 +128,7 @@ The colors were selected using an ink dropper on an image of the pet (Maple) tha
 
 [Google Fonts - Nunito](https://fonts.google.com/specimen/Nunito)
 
-Nunito was the selected typeface for the project for being ideal on a quiz due to the redability on smaller to bigger screens, on bigger blocks of texts or buttons. 
+Nunito was the selected typeface for the project for being ideal on a quiz due to the readability on smaller to bigger screens, on bigger blocks of texts or single line text.
 
 ---
 
@@ -216,6 +217,54 @@ Nunito was the selected typeface for the project for being ideal on a quiz due t
    <img src="readme-assets/user-test-quiz.png" alt="User test quiz" width="800px" />
    - All 15 users that tested the project were able to reach the last screen on different devices, browsers and screen sizes.
    <img src="readme-assets/user-test-end-quiz.png" alt="User test quiz" width="800px" />   
+
+</details>
+
+<details>
+   <summary>8.3 Fixed Bugs</summary>
+   <ul>
+         <li>Nov 12 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/d2bedfa913851a868f585fd1ccd6c0e722124624">Fix preGameMessage() error when loading index.html.</a></li>
+         <li>Nov 18 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/f2c0db7db4efb28a52b7ca225fcb13a5dc29f8ae">Fix Nickname submit button.</a></li>
+         <li>Nov 18 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/1705e0202bb0a5261b831daac7a24e5a3d388a23">Fix input typo from previous commit.</a></li>         
+         <li>Nov 18 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/a357a3e504c261fba5fed1bffc5bbf0642c0f2d9">Fix text within nickname button</a></li>         
+         <li>Nov 19 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/f7c3da05174cc71cf8d9c0d46655a0c3fc0275b5">Fix confirm answer function</a></li>         
+         <li>Nov 19 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/c548b8ee8c93ff018e60069200368f8027e65b7c">Fix score system after implementing confirm answer button.</a></li>         
+         <li>Nov 19 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/5b7f7408fad954ce704fe89a7a4708f3d8ed0d75">Fix error that allowed user to select another answer after confirming it.</a></li>         
+         <li>Nov 20 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/7a3d243863b1a808bef78df1e494683f902cbcf7">Fix currentQuestionIndex becoming string and window.location on live version.</a></li>         
+         <li>Nov 20 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/bf6cf8a7645b97cc604f60bf37bd52afb9632ab6">Fix for Github pages game.js URL redirection.</a></li>
+         <li>Nov 21 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/e99f976a429860ae453e3481230cdeefb97d7a63">Fix score count and question count elements in case user refreshes page.</a></li>                   
+         <li>Nov 21 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/a3e7942e74324887db3e5ea5189fac243a7fedc7">Fix bug that allowed users to resize screen, close modal and resize back to desktop</a></li>                   
+         <li>Nov 21 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/307170f5883edd374e90c08496c5b017b832e80c">Fix grammar and improve code comments.</a></li>                   
+         <li>Nov 25 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/a6dbc0472b2de80c4c759111bfc2797c445dbb47">Fix nickname close button on 1028px screens and up and fix resize of modals on screens 718px and up.</a></li>    
+         <li>Nov 26 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/425322c50002194690529a1dc870f989795836fe">Fix color of nickname error close button</a></li>           
+         <li>Nov 26 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/68ace84dbc7db87f1005fd2eb36886276865ef3f">Fix final score being pushed to table on refresh.</a></li>
+         <li>Nov 26 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/c77433201c1e3cc9c3644be5b52c0b810273951c">Fix blue button text on IOS devices.</a></li>
+         <li>Nov 26 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/201a9e1b576c3e0e50ef59d46a7f891634fdfea6">Fix blue button text on IOS devices.</a></li> 
+         <li>Nov 26 - <a href="https://github.com/luciotorelli/parrot-quiz/commit/37b5957107fcfa3f4aff46e2ac5d114ae1e9d48c">Fix Home/Restart button click animation</a></li>                                           
+   </ul>
+</details>
+
+<details>
+   <summary>8.4 Unfixed Bugs</summary>
+
+   * Depending on the device rescaling settings, the answer buttons may push the submit answer and next buttons outside the quiz section.
+   * Some devices displayed OS issues that were not present on the ChromeDev emulator, fixes were issued for devices that were available during development.
+</details>
+
+<details>
+   <summary>8.5 Supported Screens and Browser</summary>
+  
+  - Screen sizes:
+    - 320px — 480px: Mobile devices
+    - 481px — 768px: Tablets
+    - 769px — 1024px: Tablets and Laptops
+    - 1025px — 1200px: Desktop and Large screens
+    - 1201px and up: Large Screens
+  - Browsers:
+    - Chrome.
+    - Firefox.
+    - Opera.
+    - Microsoft Edge.
 
 </details>
 
