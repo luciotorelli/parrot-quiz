@@ -22,7 +22,7 @@ body {
 
 /* Body */
 body {
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/background.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 60%;
@@ -554,22 +554,6 @@ header h1 {
     align-self: center;
     -ms-grid-column-align: center;
     justify-self: center;
-}
-
-.question-image-div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.question-image {
-    width: 50vw;
-    margin-top: 10px;
-    border-radius: 30px;
-    display: none;
 }
 
 #speech-bubble-3-div {
