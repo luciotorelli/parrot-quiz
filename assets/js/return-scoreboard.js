@@ -7,12 +7,12 @@ function returnScoreboard() {
     const SCOREBOARD = JSON.parse(localStorage.getItem("scoreboard")) || [];
 
     SCOREBOARD_TABLE.innerHTML += SCOREBOARD
-    .map(score => {
-        return `
+        .map(score => {
+            return `
         <tr class="high-score">
             <td>${score.name}</td>
             <td>${score.score}</td>
         </tr>`;
-    })
-    .join("");
+        })
+        .join("");
 }

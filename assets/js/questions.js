@@ -1,7 +1,7 @@
 /**
  * Array with objects of questions, answers and fun facts.
  */
-const QUESTIONS = [
+ const QUESTIONS = [
     {
         question: 'How many parrot species are there in the world? ',
         answers: [
@@ -132,4 +132,4 @@ const QUESTIONS = [
             { text: 'Not quite. I use my foot fingers and my hand toes for everything! Another difference is that we usually nest in holes, trunks and crevices instead of building a nest.', correct_selected: false }
         ]
     }
-]
+];

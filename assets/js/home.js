@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", onLoad());
 function onLoad() {
     let nicknameButton = document.getElementById("submit-nickname-button");
     let startGameButton = document.getElementById("start-game-button");
-    
+
     if (nicknameButton) {
         nicknameButton.addEventListener("click", nicknameSubmitted);
     }

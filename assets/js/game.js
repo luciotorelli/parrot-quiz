@@ -75,7 +75,7 @@ function setNextQuestion() {
  */
 function showQuestion(question) {
     // Update question h1 element to display current question
-    questionH1Element.innerHTML = `Question ${currentQuestionIndex+1} out of 10`;
+    questionH1Element.innerHTML = `Question ${currentQuestionIndex + 1} out of 10`;
     // Update parrot photo to neutral photo
     parrotPhotoElement.src = 'assets/images/maple-photo-3.webp';
     // Set question speech bubble text to current question
@@ -91,7 +91,7 @@ function showQuestion(question) {
             answerButtons[answerButtonIndex].dataset.correct = answer.correct;
         }
         answerButtonIndex++;
-    })
+    });
 }
 
 /**
@@ -101,8 +101,7 @@ function selectAnswer(event) {
     selectedAnswer = event.target;
 
     // Set all answer buttons style to unselected in case the function is running for the second time on the same question
-    for (let i = 0; i < answerButtons.length; i++)
-    {
+    for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].style.borderStyle = "outset";
     }
 
@@ -129,7 +128,7 @@ function resetState() {
 
 /**
 * Select the correct answer based on the dataset.correct value and call the setStatusClass function
-*/ 
+*/
 function confirmAnswer() {
     let correct = selectedAnswer.dataset.correct;
 
@@ -140,8 +139,8 @@ function confirmAnswer() {
     // Call setAnswerStyle function on all answer options
     Array.from(answerOptionsDiv.children).forEach(button => {
         setAnswerStyle(button, button.dataset.correct);
-    })
-    
+    });
+
     // Replace body background image with a color and replace parrot photo based on the selected answer by adding corresponding class and replace the question text with a fun fact.
     if (correct) {
         document.body.classList.add("correctAnswerBody");
@@ -160,8 +159,7 @@ function confirmAnswer() {
     }
 
     // Remove event listener and disable all answer buttons after an option is selected
-    for (let i = 0; i < answerButtons.length; i++)
-    {
+    for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].removeEventListener("click", confirmAnswer);
         answerButtons[i].disabled = true;
     }
@@ -178,20 +176,19 @@ function confirmAnswer() {
 
     // Get currentQuestionIndex from the local storage, update variable, set it back to the local storage.
     currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'));
-    currentQuestionIndex++; 
+    currentQuestionIndex++;
     localStorage.setItem('currentQuestionIndex', currentQuestionIndex);
-    
+
 }
 
 /**
  * Add event listener to reset buttons and body styling, remove dataset from correct answer, add to current question index and call setNextQuestion function
  */
- nextButton.addEventListener('click', (event) => {
+nextButton.addEventListener('click', (event) => {
 
     if (QUESTIONS.length > currentQuestionIndex) {
         // Set all answer buttons style to unselected after clicking next question
-        for (let i = 0; i < answerButtons.length; i++)
-        {
+        for (let i = 0; i < answerButtons.length; i++) {
             answerButtons[i].style.borderStyle = "outset";
         }
 
@@ -208,7 +205,7 @@ function confirmAnswer() {
         setNextQuestion();
     } else {
         let answers = document.getElementsByClassName("answer");
-        for (var i = 0; i < answers.length; i++) {
+        for (let i = 0; i < answers.length; i++) {
             if (answers[i].dataset) {
                 delete answers[i].dataset.correct;
             }
@@ -216,7 +213,7 @@ function confirmAnswer() {
         showScoreboard(event);
     }
 
-})
+});
 
 /**
  * Style the dom element of all answer options based on the answer input
@@ -232,7 +229,7 @@ function setAnswerStyle(element, correct) {
 
 /**
  * Remove class styling from answer buttons
- */ 
+ */
 function clearStatusClass(element) {
     element.classList.remove('correctAnswerButton');
     element.classList.remove('wrongAnswerButton');
@@ -246,7 +243,6 @@ function clearStatusClass(element) {
 function showScoreboard(event) {
     const NICKNAME = localStorage.getItem('nickname');
     const FINAL_SCORE = localStorage.getItem('score');
-    const FINAL_WRONG_ANSWERS = localStorage.getItem('wrongAnswers');
 
     // Get the scoreboard array, if not created, create one. 
     const SCOREBOARD = JSON.parse(localStorage.getItem("scoreboard")) || [];
@@ -258,19 +254,27 @@ function showScoreboard(event) {
         name: NICKNAME
     };
 
-    // Push SCORE array into SCOREBOARD
-    SCOREBOARD.push(SCORE);
-    // Sort SCOREBOARD based on the higher scores
-    SCOREBOARD.sort( (a,b) => b.score - a.score);
-    // Remove any entry past 5 latest top scores
-    SCOREBOARD.splice(5);
-    // Save SCOREBOARD into local storage
-    localStorage.setItem('scoreboard', JSON.stringify(SCOREBOARD));
+    // Only push score to local storage array if the score haven't been pushed yet.
+    if (!(localStorage.getItem('scoreSubmitted'))) {
+        // Push SCORE array into SCOREBOARD
+        SCOREBOARD.push(SCORE);
+        // Sort SCOREBOARD based on the higher scores
+        SCOREBOARD.sort((a, b) => b.score - a.score);
+        // Remove any entry past 5 latest top scores
+        SCOREBOARD.splice(5);
+        // Save SCOREBOARD into local storage
+        localStorage.setItem('scoreboard', JSON.stringify(SCOREBOARD));
+    }
+
+
     // Display scoreboard element
     document.getElementsByClassName("scoreboard-end-game")[0].style.display = "flex";
 
     endQuizMessage();
     returnScoreboard();
+
+    // Set local storage key of scoreSubmitted to true
+    localStorage.setItem('scoreSubmitted', true);
 
     // Hide question and answer elements, display home button
     homeButton.style.display = "flex";
@@ -288,7 +292,7 @@ function endQuizMessage() {
     const FINAL_SCORE = parseInt(localStorage.getItem('score'));
     if (FINAL_SCORE <= 3) {
         questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You don't know a lot about parrots but I hope you learned something today!`;
-    } else if ( (FINAL_SCORE >= 4) && (FINAL_SCORE <= 9) ) {
+    } else if ((FINAL_SCORE >= 4) && (FINAL_SCORE <= 9)) {
         questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You know quite a lot about parrots. I am impressed!`;
         startConfetti();
     } else {
@@ -308,6 +312,7 @@ homeButton.addEventListener('click', (event) => {
     localStorage.removeItem('wrongAnswers');
     localStorage.removeItem('score');
     localStorage.removeItem('nickname');
+    localStorage.removeItem('scoreSubmitted');
     if (window.location.href.includes("luciotorelli.github")) {
         window.location.href = "/parrot-quiz";
     } else {
