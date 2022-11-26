@@ -1,4 +1,4 @@
-<img src="readme-assets/logo.png"
+<img id="overview" src="readme-assets/logo.png"
      alt="Am I responsive"
      width="800px" style="max-width: 100%;"/>
 
@@ -13,7 +13,7 @@ Parrot Quiz is an interactive multiple question game to test your knowledge abou
 ## Table of Contents
 
 
-1.  [Overview](https://github.com/luciotorelli/parrot-quiz#logo)
+1.  [Overview](https://github.com/luciotorelli/parrot-quiz#overview)
 2.  [User Stories](https://github.com/luciotorelli/parrot-quiz#user-stories)
 3.  [Site Owner Goals](https://github.com/luciotorelli/parrot-quiz#site-owner-goals)
 4.  [Wireframe](https://github.com/luciotorelli/parrot-quiz#wireframe)
