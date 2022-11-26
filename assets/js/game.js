@@ -291,12 +291,12 @@ function showScoreboard(event) {
 function endQuizMessage() {
     const FINAL_SCORE = parseInt(localStorage.getItem('score'));
     if (FINAL_SCORE <= 3) {
-        questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You don't know a lot about parrots but I hope you learned something today!`;
+        questionElement.innerText = `Thanks for completing the quiz ${localStorage.getItem('nickname')}, you scored ${FINAL_SCORE} out of 10 questions. You don't know a lot about parrots but I hope you learned something today!`;
     } else if ((FINAL_SCORE >= 4) && (FINAL_SCORE <= 9)) {
-        questionElement.innerText = `Thanks for completing the quiz, you scored ${FINAL_SCORE} out of 10 questions. You know quite a lot about parrots. I am impressed!`;
+        questionElement.innerText = `Thanks for completing the quiz ${localStorage.getItem('nickname')}, you scored ${FINAL_SCORE} out of 10 questions. You know quite a lot about parrots. I am impressed!`;
         startConfetti();
     } else {
-        questionElement.innerText = `Thanks for completing the quiz, you scored an impressive ${FINAL_SCORE} out of 10 questions! You know more about parrots than most people, well done!`;
+        questionElement.innerText = `Thanks for completing the quiz ${localStorage.getItem('nickname')}, you scored an impressive ${FINAL_SCORE} out of 10 questions! You know more about parrots than most people, well done!`;
         startConfetti();
     }
 
