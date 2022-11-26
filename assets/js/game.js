@@ -301,6 +301,8 @@ function endQuizMessage() {
     }
 
     questionH1Element.innerHTML = 'Quiz completed!';
+    // Update parrot photo to neutral photo
+    parrotPhotoElement.src = 'assets/images/maple-photo-3.webp';
 }
 
 /**

@@ -754,7 +754,7 @@ header h1 {
 }
 
 #home-button:active {
-    border: 5px outset #deb51d;
+    border: 5px inset #deb51d;
     background-color: #deb51d;
     color: #000;
 }
