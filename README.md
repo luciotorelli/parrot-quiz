@@ -1,6 +1,6 @@
-<img id="logo" src="assets/images/logo.png"
-     alt=""
-     width="200px" />
+<img src="readme-assets/logo.png"
+     alt="Am I responsive"
+     width="800px" style="max-width: 100%;"/>
 
 <h2><a href="https://luciotorelli.github.io/parrot-quiz/index.html" target="_blank">Live Website here</a></h2>
 
@@ -8,7 +8,7 @@
 Parrot Quiz
 ---
 
-Parrot Quiz is an interactive multiple question game to test your knowledge about our feathered friends, it is hosted by a parrot named Maple.
+Parrot Quiz is an interactive multiple question game to test your knowledge about our feathered friends, it is hosted by a parrot pet named Maple.
 
 ## Table of Contents
 
@@ -28,12 +28,10 @@ Parrot Quiz is an interactive multiple question game to test your knowledge abou
     - 8.3 Fixed Bugs
     - 8.4 Open Bugs
     - 8.5 Supported Screens and Browsers
-
-9.  Deployment
-    - 9.1 Gitpod
-    - 9.2 Github pages
-10. Credits
+9.  [Deployment](https://github.com/luciotorelli/parrot-quiz#deployment)
+10. [Credits](https://github.com/luciotorelli/parrot-quiz#credits)
     - 10.1 Special Thanks!
+    - 10.2 Tutorials and Documentation used
     - 10.2 Resources used
 
 
@@ -122,10 +120,14 @@ Parrot Quiz is an interactive multiple question game to test your knowledge abou
 
 <img src="color-scheme/color-scheme.png" alt="Wireframing for mobile scoreboard page" width="800px" />
 
+The colors were selected using an ink dropper on an image of the pet (Maple) that inspired the quiz. Green is used to display the correct answers, yellow as a neutral color for buttons, red to display incorrect answers, white for text on some dark backgrounds and black as text/background. 
 
-1. ### Typography
+
+2. ### Typography
 
 [Google Fonts - Nunito](https://fonts.google.com/specimen/Nunito)
+
+Nunito was the selected typeface for the project for being ideal on a quiz due to the redability on smaller to bigger screens, on bigger blocks of texts or buttons. 
 
 ---
 
@@ -206,22 +208,28 @@ Parrot Quiz is an interactive multiple question game to test your knowledge abou
 <details>
    <summary>8.2 Test cases</summary>
 
-   * A first time user was able to quickly understand the purpose of the website/game and how to navigate it. 
+   - A first time user was able to quickly understand the purpose of the website/game and how to navigate it. 
    <img src="readme-assets/user-test-homepage.jpeg" alt="User test homepage" width="800px" />
-   * An IOS user provided feedback in regards to the text on some buttons were displayed in blue, this was later fixed on <a href="https://github.com/luciotorelli/parrot-quiz/commit/c77433201c1e3cc9c3644be5b52c0b810273951c">commit c77433201c1e3cc9c3644be5b52c0b810273951c.</a> 
+   - An IOS user provided feedback in regards to the text on some buttons were displayed in blue, this was later fixed on <a href="https://github.com/luciotorelli/parrot-quiz/commit/c77433201c1e3cc9c3644be5b52c0b810273951c">commit c77433201c1e3cc9c3644be5b52c0b810273951c.</a> 
    <img src="readme-assets/user-test-blue-text.jpeg" alt="User test homepage" width="800px" />
-   * When the quiz is initiated the user was able to quickly understand how to select and submit their answer and select a next question.
+   - When the quiz is initiated the user was able to quickly understand how to select and submit their answer and select a next question.
    <img src="readme-assets/user-test-quiz.png" alt="User test quiz" width="800px" />
-   * All 15 users that tested the project were able to reach the last screen on different devices, browsers and screen sizes.
+   - All 15 users that tested the project were able to reach the last screen on different devices, browsers and screen sizes.
    <img src="readme-assets/user-test-end-quiz.png" alt="User test quiz" width="800px" />   
 
 </details>
 
 ---
 
-
 ## Deployment
 
+The project was deployed using [Github pages](https://pages.github.com/) and updated using the [Live Server VScode extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) following those steps; 
+
+1. Development of project and testing using VScode and Live Server on Chrome, Firefox, Opera and Edge.
+2. Once development was completed the page was deployed by heading first to Settings on Github.
+3. Clicking on Pages on the left sidebar.
+4. Selecting the main branch.
+5. Clicking save.
 
 ---
 
@@ -229,3 +237,47 @@ Parrot Quiz is an interactive multiple question game to test your knowledge abou
 
 ### Special Thanks!
 
+- Rohit Code Institutor Mentor - I am very grateful for the guidance provided by Rohit and for pointing all the improvement opportunities of my project.
+- [@tvianna](https://github.com/tvianna) - My sister that provided feedback on the project and for sharing all extensions she uses on VScode.
+- [@Neil Deignan](https://www.linkedin.com/in/neil-deignan-6b7270b2/) - My partner for testing the quiz multiple time on his devices and provide feedback during development.
+- My colleague group (Eggs) - Thanks to my colleagues for testing my project on multiple devices and providing feedback during development.
+- My family and friends that were kind enough to test the quiz on their devices and provide me 
+ with feedback and screenshots.
+- My study group for sharing the struggles/challenges and keeping each other progressing! ([@alexiiasantos](https://github.com/alexiiasantos), Bohdan, [@GaryS007](https://github.com/GaryS007), [@oconnorian3](https://github.com/oconnorian3), [@James-Fitz](https://github.com/James-Fitz), [@zemaciel](https://github.com/zemaciel), Thomas and Yanina)
+- [@WebDevSimplified](https://github.com/WebDevSimplified) for [this awesome tutorial on Flexbox](https://www.youtube.com/watch?v=fYq5PXgSsbE) that I came back to multiple times during the project.
+
+### Resources used
+
+  - [Code Institute Full Stack - Course material, mentoring and tutoring](https://codeinstitute.net/ie/full-stack-software-development-diploma/)
+  - [Stackoverflow - Having the answers to many of my questions](https://stackoverflow.com/)
+  - [W3Schools - Used to check how to use certain CSS properties and HTML elements](https://www.w3schools.com/)
+  - [Balsamiq - Used to draw the wireframes of the project](https://balsamiq.com/)
+  - [W3C markup validation service](https://validator.w3.org/)
+  - [Jigsaw CSS validation service](https://jigsaw.w3.org/css-validator/)
+  - [JShint](https://jshint.com/)
+  - [Pexels - Used to get all images and videos used in the project](https://www.pexels.com/)
+  - [Chrome Devtools - Used to debug the code, test responsiveness and run lighthouse reports](https://developer.chrome.com/docs/devtools/)
+  - [Coolors - Used to create the color palette for the project](https://coolors.co/)
+  - [Contrast Ratio - Used to test the color ratio of the project](https://contrast-ratio.com/)
+  - [WebAim Constrat Checker - Equally used to test the color ratio of the project](https://webaim.org/resources/contrastchecker/)
+  - [Pixlr - Used to resize and edit contrast of images used on the project](https://pixlr.com/e/)
+  - [Optimizilla - Used to optimize the images used in the project](https://imagecompressor.com/)
+  - [Can I Use - Used to test properties cross browser compatibility](https://caniuse.com/)
+  - [Autoprefixer - Used to add properties for cross browser compatibility](https://autoprefixer.github.io/)
+  - [VScode - Used to write the code for this project](https://code.visualstudio.com/)
+  - [Gitpod - Used in the initial part of the project until a local desktop environment was setup.](https://gitpod.io/workspaces)
+  - [YouTube Music - Used to listen to hours of lofi song during the project development](https://music.youtube.com/)
+  - [Am I responsive? - Used to create main image used on README](https://ui.dev/amiresponsive)
+  - [Google Fonts - Used to import Google font to the project](https://fonts.google.com/specimen/Open+Sans?query=open)
+  - [Screen Reader Chrome Extension - Used to test aria-label and accessability](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en)
+
+### Tutorials and Documentation used (No code were copied and pasted, only inspired and adapted)
+
+   - [W3C - Create a responsive popup modal with CSS & JavaScript](https://w3collective.com/popup-modal-javascript/)
+   - [WebDev simplified - Build A Quiz App With JavaScript](https://www.youtube.com/watch?v=riDzcEQbX6k&ab_channel=WebDevSimplified)
+   - [Developer Mozilla - Window: load event](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)
+   - [Clubmate Fi - Remove a class name from multiple elements with pure JavaScript](https://clubmate.fi/remove-a-class-name-from-multiple-elements-with-pure-javascript)
+   - [Folks talk - Accessing Objects Inside Array With Code Examples](https://www.folkstalk.com/tech/accessing-objects-inside-array-with-code-examples/)
+
+### Imported library
+ - The confetti animation is an imported library. Author: mathusummut. Found [on CSS script.](https://www.cssscript.com/confetti-falling-animation/)
